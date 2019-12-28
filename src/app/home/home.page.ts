@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {  ActivatedRoute, Params } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
+  page;
 
+  constructor(public nav:NavController){
+    
+  }
+  
 
 }

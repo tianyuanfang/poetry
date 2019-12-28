@@ -14,6 +14,11 @@ const routes: Routes = [
             path: '',
             loadChildren: () =>
               import('../home/home.module').then(m => m.HomePageModule)
+          },
+          {
+            path: 'hometail',
+            loadChildren: () =>
+              import('../hometail/hometail.module').then(m => m.HometailPageModule)
           }
         ]
       },
