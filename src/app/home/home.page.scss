@@ -1,0 +1,88 @@
+ion-header{
+  span{
+    display: block;
+    float: left;
+    border: 1px solid rgb(223, 221, 221);
+    width: 40px;
+    height: 25px;
+    font-size: 14px;
+    margin-left: 2%;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 3px;
+    color: rgb(149, 148, 148);
+  }
+  ion-icon{
+    float:right;
+    width: 30px;
+    height: 30px;
+  }
+  
+}
+
+ion-content{
+    
+ion-slides{
+  background-color:rgb(248, 244, 244);
+  ion-slide{
+    // border:1px solid yellow;
+  .total{
+    background-color: white;
+    width: 90%;
+    height: 440px;
+    // border: 1px solid red;
+    margin-top: 50px;
+  
+    .leftimg{
+      width: 47%;
+      height: 100%;
+      float: left;
+      // border: 1px solid blue;
+      // background: #000;//给图片上蒙版第一步
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit:cover;
+        // opacity:0.8; filter: alpha(opacity=60);//给图片上蒙版第二部
+      }
+    }
+    .rightword{
+      width: 53%;
+      height: 100%;
+      float: left;
+      // border: 1px solid blue;
+      display: flex;  justify-content: center;align-items:center;//让div中的内容上下居中，左右居中。
+      padding-left: 5%;
+  
+      #firstrow{
+        height: 90%;
+        width: 30%;
+        // border: 1px solid orange;
+        float: right;
+        font-family: STXingkai  ;
+        padding-top: 20%;
+        font-size: 26px;
+      }
+      #secondrow{
+        height: 90%;
+        width: 30%;
+        // border: 1px solid palevioletred;
+        float: right;
+        font-family: STXingkai  ;
+        padding-top: 20%;
+        font-size: 26px;
+      }
+      #thirdrow{
+        font-family: STXingkai  ;
+        height: 90%;
+        width: 30%;
+        // border: 1px solid green;
+        float: right;
+        padding-top: 200%;
+        font-size: 26px;
+      }
+    }
+  }
+}
+}
+}

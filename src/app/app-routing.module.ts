@@ -25,7 +25,11 @@ const routes: Routes = [
   {
     path: 'hometail',
     loadChildren: () => import('./hometail/hometail.module').then( m => m.HometailPageModule)
+  },  {
+    path: 'hometotal',
+    loadChildren: () => import('./hometotal/hometotal.module').then( m => m.HometotalPageModule)
   }
+
 ];
 @NgModule({
   imports: [

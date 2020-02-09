@@ -1,9 +1,47 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>我的</ion-title>
+        <ion-title>我</ion-title>
+        <img src="assets/icon/set.png" class="set" (click)="goSet()">
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    我的
+<div class="content">       
+    <div id="people">
+        <img src="../../assets/icon/15.jpg" alt="" (click)="presentActionSheet()">
+        <ul>
+          <li>花开岁月花开</li>
+          <li>8979749273</li>
+          <!-- <li>ID号:{{mine[0]?.ID}}</li> -->
+        </ul>
+        <span>主页   ></span>
+    </div>
+  
+    <div id="content1">
+        <ul>
+          <li (click)="goFans()">喜欢<span>></span></li>
+          <li (click)="goCollection()">收藏<span>></span></li>
+          <li (click)="goGuanzhu()">关注<span>></span></li>
+          <li (click)="goFans()">粉丝<span>></span></li>
+          <li (click)="goCreate()">创作<span>></span></li>
+        </ul>
+    </div>
+    <div id="content2">
+        <ul>
+            <li (click)="studyPlan()">学习计划<span>></span></li>
+        </ul>
+    </div>
+    <div id="content3">
+        <ul>
+            <li (click)="nightMoudle()">夜间模式<span>></span></li>
+        </ul>
+    </div>
+    <div id="content4">
+        <ul>
+            <li (click)="recommentPoem()">推荐观看<span>></span></li>
+            <li (click)="aboutUs()">关于我们<span>></span></li>
+        </ul>
+    </div>
+
+</div>     
 </ion-content>

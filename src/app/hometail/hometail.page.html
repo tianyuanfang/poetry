@@ -5,10 +5,141 @@
                 <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
             </ion-button>
         </ion-buttons>
-        <ion-title>首页详情</ion-title>
+        <div id="right"> 
+                <ion-icon ios="ios-heart" md="md-heart" (click)="clickZan()" [style.color]="Flag?'#fd273f':'rgb(212, 208, 208)'"></ion-icon>&nbsp;
+                <ion-icon ios="ios-star" md="md-star" (click)="clickZan()" [style.color]="Flag?'#fd273f':'rgb(212, 208, 208)'"></ion-icon>&nbsp;
+        </div>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    首页详情页
+    <div class="poem">
+        <div id="poemname">蜀相</div>
+        <div id="poemauthor">[唐]杜甫</div>
+        <div id="poemcontent">丞相祠堂何处寻，锦官城外柏森森。<br/>
+                映阶碧草自春色，隔叶黄鹂空好音。<br/>
+                三顾频烦天下计，两朝开济老臣心。<br/>
+                出师未捷身先死，长使英雄泪满襟。<br/>
+        </div>
+    </div>
+
+    <div class="poemdetail">
+        <ul class="navList">
+            <li  (click)="isClick(0)" [class.first]="isActive==0">评析</li>
+            <li  (click)="isClick(1)" [class.second]="isActive==1">注释</li>
+            <li  (click)="isClick(2)" [class.third]="isActive==2">译文</li>
+            <li  (click)="isClick(3)" [class.fourth]="isActive==3">赏析</li>
+        </ul>
+        <div [ngSwitch]='isActive' id="switch">
+
+            <div *ngSwitchCase='0' id="switch1">
+                <div >
+                        &nbsp; &nbsp;&nbsp; &nbsp;《蜀相》是唐代诗人杜甫定居成都草堂后，翌年游览武侯祠时创作的一首
+                    咏史怀古诗。此诗借游览古迹，表达了诗人对蜀汉丞相诸葛亮雄才大略、辅佐两朝、忠心
+                    报国的称颂以及对他出师未捷而身死的惋惜之情。诗中既有尊蜀正统的观念，又有才困时
+                    艰的感慨，字里行间寄寓感物思人的情怀。这首七律章法曲折宛转，自然紧凑。前两联记
+                    行写景，洒洒脱脱；后两联议事论人，忽变沉郁。全篇由景到人，由寻找瞻仰到追述回顾，
+                    由感叹缅怀到泪流满襟，顿挫豪迈，几度层折。全诗所怀者大，所感者深，雄浑悲壮，沉
+                    郁顿挫，具有震撼人心的巨大力量。
+                </div>
+            </div>
+
+            <div *ngSwitchCase='1' id="switch1">
+                <div >
+                        &nbsp; &nbsp;&nbsp; &nbsp;⑴蜀相：三国蜀汉丞相，指诸葛亮（孔明)。诗题下有注：诸葛亮祠在昭烈庙西。
+                        ⑵丞相祠堂：即诸葛武侯祠，在今成都市武侯区，晋李雄初建。
+                        ⑶锦官城：成都的别名。柏（bǎi）森森：柏树茂盛繁密的样子。
+                        ⑷映阶碧草自春色，隔叶黄鹂空好（hǎo）音：这两句写祠内景物。杜甫极推重诸葛亮，他此来并非为了赏玩美景，“自”“空”二字含情。是说碧草映阶，不过自为春色；黄鹂隔叶，亦不过空作好音，他并无心赏玩、倾听。因为他所景仰的人物已不可得见。空：白白的。
+                        ⑸三顾频烦天下计：意思是刘备为统一天下而三顾茅庐，问计于诸葛亮。这是在赞美在对策中所表现的天才预见。频烦，犹“频繁”，多次。
+                        ⑹两朝开济：指诸葛亮辅助刘备开创帝业，后又辅佐刘禅。两朝：刘备、刘禅父子两朝。开：开创。济：扶助。
+                        ⑺出师未捷身先死，长使英雄泪满襟（jīn）：出师还没有取得最后的胜利就先去世了，常使后世的英雄泪满衣襟。指诸葛亮多次出师伐魏，未能取胜，至蜀建兴十二年（234年）卒于五丈原（今陕西岐山东南）军中。出师：出师：出兵。此二句《新编大学语文》（暨南大学出版社2010年版）为“壮志未酬身先死，长使英雄泪满襟”。
+                </div>  
+            </div>
+
+            <div *ngSwitchCase='2' id="switch1">
+                <div >
+                        &nbsp; &nbsp;&nbsp; &nbsp;诸葛丞相的祠堂去哪里寻找？锦官城外翠柏长得郁郁苍苍。
+                        碧草映照石阶自有一片春色，黄鹂在密叶间空有美妙歌声。
+                        当年先主屡次向您求教大计，辅佐先主开国扶助后主继业。
+                        可惜您却出师征战病死军中，常使古今英雄感慨泪湿衣襟。 
+                </div>       
+            </div>
+
+            <div *ngSwitchCase='3' id="switch1">
+                <div >
+                        &nbsp; &nbsp;&nbsp; &nbsp;这首七律《蜀相》，抒发了诗人对诸葛亮才智品德的崇敬和功业未
+                        遂的感慨。融情、景、议于一炉，既有对历史的评说，又有现实的寓托，在历代咏
+                        赞诸葛亮的诗篇中，堪称绝唱。
+                        古典诗歌中常以问答起句，突出感情的起伏不平。这首诗的首联也是如此。“丞相祠
+                        堂何处寻？锦官城外柏森森。”一问一答，一开始就形成浓重的感情氛围，笼罩全篇。
+                        上句“丞相祠堂”直切题意，语意亲切而又饱含崇敬。“何处寻”，不疑而问，加强语势，
+                        并非到哪里去寻找的意思。诸葛亮在历史上颇受人民爱戴，尤其在四川成都，祭祀他
+                        的庙宇很容易找到。“寻”字之妙在于它刻画出诗人那追慕先贤的执著感情和虔诚造谒
+                        的悠悠我思。下句“锦官城外柏森森”，指出诗人凭吊的是成都郊外的武侯祠。这里柏
+                        树成荫，高大茂密，呈现出一派静谧肃穆的气氛。柏树生命长久，常年不凋，高大挺拔，
+                        有象征意义，常被用作祠庙中的观赏树木。作者抓住武侯祠的这一景物，展现出柏树那
+                        伟岸、葱郁、苍劲、朴质的形象特征，使人联想到诸葛亮的精神，不禁肃然起敬。接着
+                        展现在读者面前的是茵茵春草，铺展到石阶之下，映现出一片绿色；几只黄莺，在林叶
+                        之间穿行，发出宛转清脆的叫声。
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="authordetail">
+        <span>作者</span>
+        <div>
+            <p class="many-txt" >  &nbsp; &nbsp;&nbsp; &nbsp;杜甫（712年—770年），字子美，自号少陵野老，唐代伟大的现实主义诗人，与李白合称“李杜”。
+                原籍湖北襄阳，后徙河南巩县。 [1-2]  为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫
+                与李白又合称“大李杜”，杜甫也常被称为“老杜”。 杜甫少年时代曾先后游历吴越和齐赵，其间曾
+                赴洛阳应举不第。三十五岁以后，先在长安应试，落第；后来向皇帝献赋，向贵人投赠。官场不得
+                志，亲眼目睹了唐朝上层社会的奢靡与社会危机。天宝十四载（755年），安史之乱爆发，潼关失守，
+                杜甫先后辗转多地。乾元二年（759年）杜甫弃官入川，虽然躲避了战乱，生活相对安定，但仍然心
+                系苍生，胸怀国事。创作了《登高》《春望》《北征》以及“三吏”、“三别”等名作。虽然杜甫是个
+                现实主义诗人，但他也有狂放不羁的一面，从其名作《饮中八仙歌》不难看出杜甫的豪气干云。
+            </p>
+            <br>
+            <button type="button" (click)="showall()">展开</button>
+        </div>
+       
+    </div>
+
+    <div class="comment">
+        <span>评论</span>
+        <ul class="exter">
+            <li class="exterli">
+                <span id="user" ><img src="../../assets/icon/16.jpg"></span>
+                <div id="commentdetail">
+                    <p style="margin:0  " class="name">向日葵</p>
+                    <p style="margin:0  ">哇！好感动！这首诗真是倾国倾城，我好喜欢。非常符合我的心境。大爱大爱。要多学习我国古诗。</p>
+                    <p style="margin:0  " class="data">
+                        2019.01.06 &nbsp; 23:45:38
+                    </p>
+                </div>
+            </li>
+            <li class="exterli">
+                <span id="user" ><img src="../../assets/icon/23.jpg"></span>
+                <div id="commentdetail">
+                    <p style="margin:0  " class="name">向日葵</p>
+                    <p style="margin:0  ">哇！好感动！这首诗真是倾国倾城，我好喜欢。</p>
+                    <p style="margin:0  " class="data">
+                        2019.01.06 &nbsp; 23:45:38
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <br>
+    </div> 
+    
+
+
 </ion-content>
+
+
+      
+<ion-footer>
+    <input type="text" id="inpcomment">
+    <button id="btncomment" (click)='comment()'>评论</button>
+</ion-footer>

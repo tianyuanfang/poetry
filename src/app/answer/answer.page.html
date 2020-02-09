@@ -5,5 +5,62 @@
 </ion-header>
 
 <ion-content>
-    趣答
+    <div class="body">
+        <div id="header">
+            <div id="title">诗词大会</div>
+            <div id="date">夏之节·十二期</div>
+        </div>
+        <div id="illustration">
+           <p class="many-txt">
+            截止时间：6月1日 00:00~24:00 <br>
+            答题时间：5月1日-6月1日,每年总共十二期，每个月一期<br>
+            参赛奖励：<br>
+            状元：赠送三年会员；<br>
+            榜眼：赠送二年会员；<br>
+            探花：赠送一年会员；<br>
+            前五十名：赠送一个月会员；<br>
+            评奖标准：答题正确数量多者获胜，相同数量时间短者获胜。<br>
+            题型说明：随机出题。总共40道题，每道题的时间为20秒。类型：10道点字成诗、10道填空题、10道选择题、10道看图猜诗。
+            </p>
+            <button type="button" (click)="showall()">展开</button>
+        </div>
+
+        <div id="gradeMe">
+            <ul class="bigul">
+                <li class="bigli">
+                    <span id="num">3838</span>
+                    <img src="../../assets/icon/33.jpg" alt="" (click)="presentActionSheet()">
+                    <ul>
+                        <li>花开岁月</li>
+                        <li style="font-size:12px;color:grey">答对15道 &nbsp; 用时3分51秒</li>
+                    </ul>
+                    <span id="identify">考生</span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="gradeOther">
+            <ul class="bigul">
+                <li class="bigli" (click)="goFans()" >
+                    <span id="num">1</span>
+                    <img src="../../assets/icon/34.jpg" alt="" (click)="presentActionSheet()">
+                    <ul>
+                        <li>唯花爱之杨鲁班了</li>
+                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                    </ul>
+                    <span>状元</span>
+                </li>
+                <li class="bigli" (click)="goCollection()">
+                    <span id="num">20</span>
+                    <img src="../../assets/icon/16.jpg" alt="" (click)="presentActionSheet()">
+                    <ul>
+                        <li>小天才</li>
+                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                    </ul>
+                    <span>榜眼</span>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
 </ion-content>

@@ -1,0 +1,169 @@
+ion-header{
+    #right{
+        float:right;
+    }
+}
+
+ion-content{
+    font-family: Georgia, serif;
+    .poem{
+        width: 100%;
+        text-align: center;
+        line-height: 30px;
+        #poemname{
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #poemauthor{
+            font-weight: bold;
+        }
+        #poemcontent{
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 32px;
+        }
+    }
+    .poemdetail{
+        margin-top: 20px;
+        ul{
+            li{
+                float: left;
+                margin-left: 5%;
+                font-size: 17px;
+                font-weight: 560;
+                color: rgb(100, 100, 100);
+            }
+            .first,.second,.third,.fourth{
+                color: rgb(133, 12, 12);
+            }
+        }
+        
+        #switch{
+            // border: 1px solid red;
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 10px;
+            float: left;
+            overflow: hidden;
+            display: flex;
+            line-height: 32px;
+        }
+    }
+
+    .authordetail{
+        // border: 1px solid green;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+        float: left;
+        span{
+            display: block;
+            // border: 1px solid orange;
+            font-size: 17px;
+            font-weight: 560;
+            color: rgb(133, 12, 12);
+        }
+        
+        div{
+            width: 100%;
+            margin-top: 10px;
+            button{
+                float:right;
+                margin-top: -20px;
+                background-color: white;
+                color:rgb(133, 12, 12); 
+                border: 1px solid transparent;  //自定义边框
+                outline: none;    //消除默认点击蓝色边框效果
+            }
+            p{
+            font-size: 16px;
+            line-height: 32px;
+            }
+            .many-txt{
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+            .all-txt{
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 100;
+                -webkit-box-orient: vertical;
+            }
+        }
+    }
+    .comment{
+        // border: 1px solid green;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+        float: left;
+        span{
+            display: block;
+            // border: 1px solid orange;
+            font-size: 17px;
+            font-weight: 560;
+            color: rgb(133, 12, 12);
+        }
+        .exter{
+            margin-top: 10px;
+            .exterli{
+                width: 100%;
+                display: flex;
+                border-bottom: 1px solid gainsboro;
+                margin-top: 5px;
+                #user{
+                    // border: 1px solid green;
+                    width: 13%;
+                    height: 35px;
+                    float: left;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                }
+                #commentdetail{
+                    // border: 1px solid rebeccapurple;
+                    width: 87%;
+                    float: left;
+                    p{
+                        line-height: 30px;
+                    }
+                    .name{
+                        // border: 1px solid green;
+                        height: 35px;
+                        line-height: 30px;
+                        font-weight: 600;
+                        color: gray;
+                    }
+                    .data{
+                        font-size: 10px;
+                        color: gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ion-footer{
+    input{
+        width: 85%;
+        height: 30px;
+        border-radius: 3px;
+        margin-top: 5px;
+        margin-bottom: 1px;
+        border: 1px solid grey;
+    }
+    #btncomment{
+        width: 15%;
+        height: 30px;
+        border-radius: 3px;
+        background-color: rgb(151, 151, 247);
+        color: white;
+    }
+}

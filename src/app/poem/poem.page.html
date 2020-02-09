@@ -1,9 +1,138 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-title>诗会</ion-title>
-    </ion-toolbar>
+        <ul class="navList">
+            <li  (click)="isClick(0)" [class.first]="isActive==0">诗会</li>
+            <li  (click)="isClick(1)" [class.second]="isActive==1">分类</li>
+        </ul>
 </ion-header>
 
-<ion-content>
-    诗会
+<ion-content>   
+    <div [ngSwitch]='isActive' id="switch">
+        <div *ngSwitchCase='0' id="switch0">
+            <div>
+                <span class="span2">已发布(13)</span>
+                <ul id="ul">
+                  <li class="li">
+                    <div id="header">
+                        <div class="div1"><img src="../../assets/icon/13.jpg" alt=""></div>
+                        <div class="div2"><span>向日葵</span><span>2019.01.26</span></div>
+                        <!-- <div class="div3">
+                            <ion-icon name="ios-arrow-down" (click)="showList(i)"></ion-icon>
+                            <ul class="hideList">
+                            <li><i class="iconfont icon-fenxiang-copy"></i>分享到<i class="iconfont icon-qq1"></i><i class="iconfont icon-weixin"></i></li>
+                            <li (click)="edit(item.pID,i)"><i class="iconfont icon-bianji"></i>编辑</li>
+                            <li (click)="del(item.pID,i)"><i class="iconfont icon-picture-delet"></i>删除</li>
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div id="content">
+                      <p>
+                        《菩萨蛮·小山重叠金明灭》
+
+                        【唐】温庭筠
+                        
+                        小山重叠金明灭，鬓云欲度香腮雪。
+                        
+                        懒起画蛾眉，弄妆梳洗迟。
+                        
+                        照花前后镜，花面交相映。
+                        
+                        新帖绣罗襦，双双金鹧鸪。
+                       
+                      </p>
+                      <img src="../../assets/icon/26.jpg" alt="">
+                    </div>
+                    <div id="footer">
+                        <span class="span">
+                          <!-- <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [class.heart]="userzanflag[i]"></ion-icon> -->
+                          <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)"></ion-icon>
+                          <span>13</span>
+                        </span>
+                        <span class="span">
+                          <!-- <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"  [class.star]="usercollectflag[i]"></ion-icon> -->
+                          <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"></ion-icon> 
+                          <span>5</span>
+                        </span>
+                        <span class="span">
+                            <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
+                            <span>3</span>
+                        </span>
+                    </div>
+                  </li>
+                  <li class="li">
+                        <div id="header">
+                            <div class="div1"><img src="../../assets/icon/13.jpg" alt=""></div>
+                            <div class="div2"><span>向日葵</span><span>2019.01.26</span></div>
+                            <!-- <div class="div3">
+                                <ion-icon name="ios-arrow-down" (click)="showList(i)"></ion-icon>
+                                <ul class="hideList">
+                                <li><i class="iconfont icon-fenxiang-copy"></i>分享到<i class="iconfont icon-qq1"></i><i class="iconfont icon-weixin"></i></li>
+                                <li (click)="edit(item.pID,i)"><i class="iconfont icon-bianji"></i>编辑</li>
+                                <li (click)="del(item.pID,i)"><i class="iconfont icon-picture-delet"></i>删除</li>
+                                </ul>
+                            </div> -->
+                        </div>
+                        <div id="content">
+                          <p>
+                            《菩萨蛮·小山重叠金明灭》
+    
+                            【唐】温庭筠
+                            
+                            小山重叠金明灭，鬓云欲度香腮雪。
+                            
+                            懒起画蛾眉，弄妆梳洗迟。
+                            
+                            照花前后镜，花面交相映。
+                            
+                            新帖绣罗襦，双双金鹧鸪。
+                           
+                          </p>
+                          <img src="../../assets/icon/26.jpg" alt="">
+                        </div>
+                        <div id="footer">
+                            <span class="span">
+                              <!-- <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [class.heart]="userzanflag[i]"></ion-icon> -->
+                              <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)"></ion-icon>
+                              <span>13</span>
+                            </span>
+                            <span class="span">
+                              <!-- <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"  [class.star]="usercollectflag[i]"></ion-icon> -->
+                              <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"></ion-icon> 
+                              <span>5</span>
+                            </span>
+                            <span class="span">
+                                <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
+                                <span>3</span>
+                            </span>
+                        </div>
+                      </li>
+                </ul>
+            </div>
+        </div>
+
+
+      <div *ngSwitchCase='1' id="switch1">
+            <div style="width:500px; border:1px solid rgb(180, 179, 179);margin-top:10px;"></div>
+          <p>选集</p>
+          <ul class="classify">
+              <li *ngFor="let item of selections;let i=index" (click)="goPlan(i)">
+                  <img src="{{item.imgsrc}}" alt="" (click)="goPlan(i)">
+                  <span>{{item.imgname}}</span>
+              </li>
+          </ul>
+          <p>主题</p>
+          <ul class="classify">
+              <li *ngFor="let item of theme;let i=index" (click)="goPlan(i)">
+                  <img src="{{item.imgsrc}}" alt="" (click)="goPlan(i)">
+                  <span>{{item.imgname}}</span>
+              </li>
+          </ul>
+          <p>写景</p>
+          <ul class="classify">
+              <li *ngFor="let item of scene;let i=index" (click)="goPlan(i)">
+                  <img src="{{item.imgsrc}}" alt="" (click)="goPlan(i)">
+                  <span>{{item.imgname}}</span>
+              </li>
+          </ul>
+      </div>
+    </div>
 </ion-content>

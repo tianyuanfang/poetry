@@ -1,0 +1,119 @@
+ion-content{
+    .body{
+        width: 100%;
+        height: 100%;
+        background-color:rgb(248, 244, 244);
+        #header{
+            border: 1px solid white;
+            width: 100%;
+            height: 30%;
+            background: url(../../assets/icon/poem3.png) no-repeat;
+            background-size: cover;
+            background-position:center;
+             #title{
+                // border: 1px solid green;
+                width: 100%;
+                height: 70px;
+                margin-top: 40px;
+                text-align: center;
+                font-family: STXingkai;
+                font-size: 40px;
+                font-weight: bold;
+                line-height: 70px;
+            } 
+            #date{
+                // border: 1px solid green;
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                font-family: STXingkai;
+                font-size: 20px;
+                line-height: 40px;
+            }
+        }
+        #illustration{
+            width: 100%;
+            // border: 1px solid blue;
+            padding-left: 10px;
+            background-color: white;
+            button{
+                float:right;
+                margin-top: -20px;
+                margin-right: 10px;
+                background-color: white;
+                color:rgb(95, 95, 95); 
+                border: 1px solid transparent;  //自定义边框
+                outline: none;    //消除默认点击蓝色边框效果
+            }
+            p{
+            font-size: 16px;
+            line-height: 26px;
+            }
+            .many-txt{
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+            .all-txt{
+                overflow : hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 100;
+                -webkit-box-orient: vertical;
+            }
+        }
+
+        #gradeMe,#gradeOther{
+            // border: 1px solid blue;
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            background-color: white;
+            .bigul{
+                width: 100%;
+                height: 100px;
+                .bigli{
+                    width: 100%;
+                    height: 100px;
+                    display: flex;  align-items:center;
+                    padding-left: 2px;
+                    border-width: 0 0 1px 0;
+                    border-style: solid;
+                    border-color: gainsboro;
+                    img{
+                        width:60px;
+                        height:60px;
+                        object-fit:cover;
+                        border-radius: 5px;
+                        margin-left: 5px;
+
+                    }
+                    ul{
+                        // border: 1px solid yellow;
+                        margin-left: 5px;
+                        margin-right: 60px;
+                        li{
+                            margin: 5px;
+                        }
+                    }
+                    #num{
+                        // border: 1px solid blue;
+                        width: 40px;
+                        height: 20px;
+                        text-align: center;
+                        line-height: 20px;
+                        color: grey;
+                    }
+                }
+            }
+             
+         }
+        #gradeOther{
+            // border: 1px solid blue;
+            height: 2000px;
+        }
+
+    }
+}

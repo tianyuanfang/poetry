@@ -1,10 +1,48 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>首页</ion-title>
+        <span (click)="gohometotal()">全部</span>
+        <!-- <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <img src="../../assets/icon/search.png" alt="">
+            </ion-button>
+        </ion-buttons> -->
+        <ion-icon ios="ios-search" md="md-search" (click)="clickZan()" [style.color]="Flag?'#fd273f':'rgb(212, 208, 208)'"></ion-icon>&nbsp;
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    首页
-    <ion-button color="primary" [routerLink]="[ '/tabs/home/hometail' ]"> 跳转到按钮组件页面 </ion-button>
+    <!-- 首页
+    <ion-button color="primary" [routerLink]="[ '/tabs/home/hometail' ]"> 跳转到按钮组件页面 </ion-button> -->
+    <ion-slides>
+        <ion-slide (click)="gohometail()">
+            <div class="total">
+                <div class="leftimg"><img src="../../assets/icon/29.jpg"></div>
+                <div class="rightword">
+                    <div id="firstrow">在天愿作比翼鸟</div>
+                    <div id="secondrow">在地愿为连理枝</div>
+                    <div id="thirdrow">无名氏</div>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide >
+            <div class="total">
+                <div class="leftimg"><img src="../../assets/icon/27.jpg"></div>
+                <div class="rightword">
+                    <div id="firstrow">在天愿作比翼鸟</div>
+                    <div id="secondrow">在地愿为连理枝</div>
+                    <div id="thirdrow">无名氏</div>
+                </div>
+            </div>
+        </ion-slide>
+        <ion-slide >
+            <div class="total">
+                <div class="leftimg"><img src="../../assets/icon/28.jpg"></div>
+                <div class="rightword">
+                    <div id="firstrow">在天愿作比翼鸟</div>
+                    <div id="secondrow">在地愿为连理枝</div>
+                    <div id="thirdrow">无名氏</div>
+                </div>
+            </div>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
