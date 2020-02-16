@@ -1,29 +1,28 @@
-<ion-header>
+<ion-header (click)="goSet()">
     <ion-toolbar>
         <ion-title>我</ion-title>
-        <img src="assets/icon/set.png" class="set" (click)="goSet()">
+        <img src="assets/icon/set.png" class="set">
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
 <div class="content">       
     <div id="people">
-        <img src="../../assets/icon/15.jpg" alt="" (click)="presentActionSheet()">
-        <ul>
+        <img src="../../assets/icon/15.jpg" alt=""  (click)="setMyself()">
+        <ul (click)="setMyself()">
           <li>花开岁月花开</li>
           <li>8979749273</li>
-          <!-- <li>ID号:{{mine[0]?.ID}}</li> -->
         </ul>
-        <span>主页   ></span>
+        <span (click)="myself()">主页   ></span>
     </div>
   
     <div id="content1">
         <ul>
-          <li (click)="goFans()">喜欢<span>></span></li>
-          <li (click)="goCollection()">收藏<span>></span></li>
-          <li (click)="goGuanzhu()">关注<span>></span></li>
-          <li (click)="goFans()">粉丝<span>></span></li>
-          <li (click)="goCreate()">创作<span>></span></li>
+          <li (click)="goMylike()">喜欢<span>></span></li>
+          <li (click)="goMycollect()">收藏<span>></span></li>
+          <li (click)="goMyfollow()">关注<span>></span></li>
+          <li (click)="goMycreate()">创作<span>></span></li>
+          <li (click)="goPoemlist()">诗单<span>></span></li>
         </ul>
     </div>
     <div id="content2">
@@ -31,11 +30,20 @@
             <li (click)="studyPlan()">学习计划<span>></span></li>
         </ul>
     </div>
+
     <div id="content3">
-        <ul>
-            <li (click)="nightMoudle()">夜间模式<span>></span></li>
-        </ul>
-    </div>
+            <ul>
+                <li (click)="goSet()">个人设置<span>></span></li>
+            </ul>
+        </div>
+    <!-- <div id="content3">
+        <ion-list class="Single-list" >
+            <ion-item class="Single-data">
+                <ion-label class="secaccount">夜间模式</ion-label>
+                <ion-toggle [(ngModel)]="isToggled" (ionChange) ="toggleFun()"></ion-toggle>
+            </ion-item>
+        </ion-list>
+    </div> -->
     <div id="content4">
         <ul>
             <li (click)="recommentPoem()">推荐观看<span>></span></li>

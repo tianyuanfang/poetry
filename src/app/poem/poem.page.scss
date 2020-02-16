@@ -1,19 +1,18 @@
 ion-header{
     border: none;   
     .navList{
-        margin-top: 5px;
+        margin-top: 10px;
         color:blue;
         // border:red 2px solid;
         height: 30px;
         line-height: 30px;
-        padding-left: 32%;
+        padding-left: 25%;
         li{
             height: 29px;
             text-align: center;
-            width: 25%;
+            width: 35%;
             float: left;
             border:1px solid blue;
-            border-radius:5px;
         
         }
         .first{
@@ -36,9 +35,16 @@ ion-content{
             height:40px;
             line-height: 40px;
             padding-left: 10px;
+            padding-right: 10px;
             margin-top:10px;
             font-size:18px;
             border:1px solid gainsboro;
+            img{
+                height: 25px;
+                width: 25px;
+                float: right;
+                margin-top: 7px;
+            }
         }
 
         #ul{
@@ -52,6 +58,7 @@ ion-content{
                 border: 1px solid gainsboro;
                 background-color: white;
                 margin-top:10px;
+                padding-top: 10px;
                 #header{
                     width: 100%;
                     height: 50px;

@@ -59,8 +59,33 @@
                     </ul>
                     <span>榜眼</span>
                 </li>
+                <li class="bigli" (click)="goFans()" >
+                    <span id="num">1</span>
+                    <img src="../../assets/icon/34.jpg" alt="" (click)="presentActionSheet()">
+                    <ul>
+                        <li>唯花爱之杨鲁班了</li>
+                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                    </ul>
+                    <span>状元</span>
+                </li>
+                <li class="bigli" (click)="goCollection()">
+                    <span id="num">20</span>
+                    <img src="../../assets/icon/16.jpg" alt="" (click)="presentActionSheet()">
+                    <ul>
+                        <li>小天才</li>
+                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                    </ul>
+                    <span>榜眼</span>
+                </li>
                
             </ul>
         </div>
     </div>
+    
 </ion-content>
+
+<ion-footer (click)="play()">
+    
+        开始答题
+    
+</ion-footer>

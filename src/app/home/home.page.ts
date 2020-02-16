@@ -8,16 +8,21 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  page;
+  
 
   constructor(public nav:NavController,){}  
   
   gohometotal(){
+    console.log(111);
     this.nav.navigateForward("/hometotal");
   }
   //进入诗词详情页
   gohometail(){
     this.nav.navigateForward("/hometail");
+  }
+  //进入搜索页
+  search(){
+    this.nav.navigateForward("/search");
   }
 
 }

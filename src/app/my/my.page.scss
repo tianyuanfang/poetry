@@ -4,6 +4,7 @@ ion-header{
         height: 30px;
         float: right;
         margin-right: 10px;
+        z-index: 999;
     }
 }
 ion-content{
@@ -77,6 +78,27 @@ ion-content{
                  margin-right: 15px;
              }
          }
+        //  #content3{
+        //     border: 1px solid gainsboro;
+        //     width: 100%;
+        //     height: 40px;
+        //     margin-top: 20px;
+        //     background-color: white;
+        //      .Single-list{
+        //         border: 1px solid gainsboro;
+        //         width: 100%;
+        //         height: 40px;
+        //         line-height: 40px;
+        //         .Single-data{
+        //             .secaccount{
+        //                 color: black;
+        //                 font-size: 16px;
+        //                 font-family: "宋体"!important;
+        //             }
+        //         }
+        //      }
+            
+        //  }
      
     } 
     

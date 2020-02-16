@@ -11,6 +11,8 @@ export class HometailPage{
 
   Flag=true;
   isActive=0;
+
+  //返回上一页
   back() {
     this.nav.back();
   }
@@ -36,8 +38,7 @@ export class HometailPage{
     this.isActive=i;
   }
 
-  button = document.getElementsByTagName("button")[0];
-  p = document.getElementsByTagName("p")[0];
+
 
   showall() {
     var button = document.getElementsByTagName("button")[0];

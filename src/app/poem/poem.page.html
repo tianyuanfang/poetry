@@ -1,7 +1,7 @@
 <ion-header>
         <ul class="navList">
-            <li  (click)="isClick(0)" [class.first]="isActive==0">诗会</li>
-            <li  (click)="isClick(1)" [class.second]="isActive==1">分类</li>
+            <li  (click)="isClick(0)" [class.first]="isActive==0" style="border-top-left-radius:3px;border-bottom-left-radius:3px">诗会</li>
+            <li  (click)="isClick(1)" [class.second]="isActive==1"  style="border-top-right-radius:3px;border-bottom-right-radius:3px;">分类</li>
         </ul>
 </ion-header>
 
@@ -9,7 +9,11 @@
     <div [ngSwitch]='isActive' id="switch">
         <div *ngSwitchCase='0' id="switch0">
             <div>
-                <span class="span2">已发布(13)</span>
+                <span class="span2">
+                    已发布(13)
+                    <img src="../../assets/icon/write.png">
+                </span>
+                
                 <ul id="ul">
                   <li class="li">
                     <div id="header">

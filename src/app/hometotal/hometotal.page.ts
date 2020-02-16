@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NavController ,NavParams} from '@ionic/angular';
 
 @Component({
   selector: 'app-hometotal',
@@ -8,14 +8,16 @@ import { NavController } from '@ionic/angular';
 })
 export class HometotalPage implements OnInit {
 
-  constructor(public nav: NavController) { }
+  selectedTheme: String;
+  constructor(public nav: NavController,) {
+     
+   }
 
   ngOnInit() {
   }
   back() {
     this.nav.back();
   }
-  go(){
-    this.nav.navigateForward("/hometail");
-  }
+
+ 
 }
