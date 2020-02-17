@@ -1,0 +1,53 @@
+
+ion-header{
+    
+}
+
+ion-content{
+    #content{
+       
+        .head{
+            margin-top: 20px;
+            width: 100%;
+            height: 120px;
+            // border: 1px solid yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+            }
+        }
+        ul{ 
+            margin-left: 40px;
+            width:280px;
+            list-style: none;
+            padding: 0px;
+            li{padding: 0px;margin:0px;
+                line-height:40px;
+                input{margin-left:5px;border:none;border-bottom: 1px solid grey;}
+                .line{width: 220px;}
+                form{display: inline-block;}
+                select{margin-left: 5px;}
+                textarea{
+                    margin:5px 5px 60px 5px;
+                    display: inline-block;
+                    position: absolute;
+                    border: 1px solid grey;}
+            }
+        }
+    }
+    
+}
+
+ion-footer{
+    height: 40px;
+    background-color:rgb(117, 117, 246);
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 20px;
+    letter-spacing:2px;
+}

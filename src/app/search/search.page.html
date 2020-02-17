@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar><ion-buttons slot="start">
+    <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+    <ion-title>search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="head">
+    <input type="text" placeholder="搜索" [(ngModel)]="searchText">
+    <ion-icon ios="ios-search" md="md-search" id="search" (click)="search()"></ion-icon>
+    <!-- <span>取消</span> -->
+  </div>
+  <div>
+    <p style="margin-left:15px">搜索主题</p>
+    <ul>
+      <li (click)="fun(1)">风景</li>
+      <li (click)="fun(2)">离别</li>
+      <li (click)="fun(3)">思乡</li>
+      <li (click)="fun(4)">诗经</li>
+    </ul>
+  </div>
+</ion-content>

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+            <ion-icon style="float:left;width:50px;height:30px;color:black" slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title>设置</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ul>
+    <li (click)="goAccount()">账号管理<div>{{userID}}</div></li>
+    <li (click)="goPhonenum()">手机号<div>{{phoneStr}}</div></li>
+    <li (click)="goChangePw()">修改密码<div><ion-icon name="ios-arrow-forward"></ion-icon></div></li>
+    <li (click)="goSetdata()">设置个人资料<div><ion-icon name="ios-arrow-forward"></ion-icon></div></li>
+  </ul>
+  <button (click)="goLogin()">退出登录</button>
+</ion-content>

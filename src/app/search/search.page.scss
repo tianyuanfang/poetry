@@ -1,0 +1,40 @@
+ion-content {
+    .head{
+        height: 50px;
+        width:100%;
+        // border:1px solid yellow;
+        margin-top: 2px;
+        display: flex;  justify-content: center;align-items:center;
+        input{
+            text-align: center;
+            width: 300px;
+            height: 30px;
+            border-radius: 18px;
+            border:1px solid grey;
+            font-size:14px;
+            float: left;
+            outline: none;
+        }
+        #search{
+            color:grey;
+            font-size:24px!important;
+            // border:1px solid blue;
+            float: left;
+        }
+    }
+    ul{
+        margin:0;
+        padding: 0;
+        list-style: none;
+        li{
+            float: left;
+            width:70px;
+            height:70px;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 50%;
+            margin-left:15px;
+            background-color: rgb(196, 196, 247);
+        }
+    }
+}

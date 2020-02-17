@@ -1,0 +1,107 @@
+ion-header{
+    border-bottom:1px solid grey; 
+    .navList{
+        color:blue;
+        // border:red 2px solid;
+        height: 30px;
+        width: 205px;
+        line-height: 30px;
+        margin-left: 10%;
+        li{
+            height: 29px;
+            text-align: center;
+            line-height: 25px;
+            width: 90px;
+            float: left;
+            border:1px solid blue;
+            // border-radius:5px;
+        }
+        .first{
+            color:white;
+            background: blue;
+        }
+        .second{
+            color:white;
+            background: blue;
+        }
+    }
+}
+
+ion-content{
+    #switch{
+        #people{
+            #eachPeople{
+                border-bottom: 1px solid gainsboro;
+                width: 100%;
+                height: 80px;
+                // display: flex;  align-items:center;
+                background-color: white;
+                .div1{
+                    width: 80px;
+                    height: 80px;
+                    // border: 1px solid yellow;
+                    float: left;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+                    img{
+                        width:60px;
+                        height:60px;
+                        object-fit:cover;
+                        border-radius: 5px;
+                    }
+                }
+                .div2{
+                    width: 220px;
+                    height: 80px;
+                    // border: 1px solid red;
+                    float: left;
+                    padding-top: 7px;
+                    #p1{
+                        // border: 1px solid purple;
+                        height: 35px;
+                        font-size: 18px;
+                        line-height: 35px;
+                        font-weight: 520;
+                    }
+                    #p2{
+                        // border: 1px solid purple;
+                        width: 100%;
+                        height: 30px;
+                        font-size: 13px;
+                        line-height: 30px;
+                        color: grey;
+                    }
+                    .many-txt{//只显示一行，剩下的用...显示
+                        overflow : hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 1;
+                        -webkit-box-orient: vertical;
+                    }
+                }
+                .div3{
+                    width: 55px;
+                    height: 80px;
+                    margin-right: 10px;
+                    // border: 1px solid blue;
+                    float: right;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center; 
+                    span{
+                        width: 55px;
+                        height: 25px;
+                        text-align: center;
+                        line-height: 25px;
+                        background-color: gainsboro;
+                        color: blue;
+                        font-size: 14px;
+                     }
+                }
+                
+             }
+        }
+    
+    }
+}

@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="back()">
+          <ion-icon style="float:left;width:50px;height:30px;color:blue" slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>喜欢</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="body">
+      <ul id="ul">
+          <li class="li">
+            <div id="header">
+                <div class="div1"><img src="../../assets/icon/14.jpg" alt=""></div>
+                <div class="div2"><span>乔子楚</span><span>2019.01.26</span></div>
+            </div>
+            <div id="content">
+              <p>
+                《菩萨蛮·小山重叠金明灭》
+      
+                【唐】温庭筠
+                
+                小山重叠金明灭，鬓云欲度香腮雪。
+                
+                懒起画蛾眉，弄妆梳洗迟。
+                
+                照花前后镜，花面交相映。
+                
+                新帖绣罗襦，双双金鹧鸪。
+               
+              </p>
+              <img src="../../assets/icon/20.jpg" alt="">
+            </div>
+            <div id="footer">
+                <span class="span">
+                  <!-- <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [class.heart]="userzanflag[i]"></ion-icon> -->
+                  <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)"></ion-icon>
+                  <span>13</span>
+                </span>
+                <span class="span">
+                  <!-- <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"  [class.star]="usercollectflag[i]"></ion-icon> -->
+                  <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"></ion-icon> 
+                  <span>5</span>
+                </span>
+                <span class="span">
+                    <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
+                    <span>3</span>
+                </span>
+            </div>
+          </li>
+          <li class="li">
+                <div id="header">
+                    <div class="div1"><img src="../../assets/icon/15.jpg" alt=""></div>
+                    <div class="div2"><span>小梅花</span><span>2019.01.26</span></div>
+                </div>
+                <div id="content">
+                  <p>
+                    《菩萨蛮·小山重叠金明灭》
+      
+                    【唐】温庭筠
+                    
+                    小山重叠金明灭，鬓云欲度香腮雪。
+                    
+                    懒起画蛾眉，弄妆梳洗迟。
+                    
+                    照花前后镜，花面交相映。
+                    
+                    新帖绣罗襦，双双金鹧鸪。
+                   
+                  </p>
+                  <img src="../../assets/icon/27.jpg" alt="">
+                </div>
+                <div id="footer">
+                    <span class="span">
+                      <!-- <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [class.heart]="userzanflag[i]"></ion-icon> -->
+                      <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)"></ion-icon>
+                      <span>13</span>
+                    </span>
+                    <span class="span">
+                      <!-- <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"  [class.star]="usercollectflag[i]"></ion-icon> -->
+                      <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)"></ion-icon> 
+                      <span>5</span>
+                    </span>
+                    <span class="span">
+                        <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
+                        <span>3</span>
+                    </span>
+                </div>
+              </li>
+        </ul>
+  </div>
+  
+
+</ion-content>

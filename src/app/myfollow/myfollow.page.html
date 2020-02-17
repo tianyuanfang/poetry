@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+            <ion-icon style="float:left;width:50px;height:30px;color:blue" slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+
+    <ul class="navList">
+        <li  (click)="isClick(0)" [class.first]="isActive==0" style="border-top-left-radius:3px;border-bottom-left-radius:3px">我的关注</li>
+        <li  (click)="isClick(1)" [class.second]="isActive==1" style="border-top-right-radius:3px;border-bottom-right-radius:3px;">我的粉丝</li>
+    </ul>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div [ngSwitch]='isActive' id="switch">
+  <div *ngSwitchCase='0' id="switch0">
+      <ul id="people">
+        <li id="eachPeople">
+            <div class="div1">
+                <img src="../../assets/icon/poem.jpg" alt="" >
+            </div>
+            <div class="div2">
+              <p id="p1">小辣椒</p>
+              <p id="p2" class="many-txt">中国传媒大学18播本</p>
+            </div> 
+            <div class="div3">
+                <span class="btn" (click)=follow(0)>已关注</span>
+            </div>
+        </li>
+
+        <li id="eachPeople">
+          <div class="div1">
+              <img src="../../assets/icon/34.jpg" alt="" >
+          </div>
+          <div class="div2">
+            <p id="p1">保护鲁班</p>
+            <p id="p2" class="many-txt">每天都开心，希望心里想的都能成，梦想成真，嘻嘻！</p>
+          </div> 
+          <div class="div3">
+              <span class="btn" (click)=follow(1)>已关注</span>
+          </div>
+        </li>
+      </ul>
+  </div>
+
+
+  <div *ngSwitchCase='1' id="switch1">
+      暂时还没有哦~
+  </div>
+</div>
+</ion-content>
