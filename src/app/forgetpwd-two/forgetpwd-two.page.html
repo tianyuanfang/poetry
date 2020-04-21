@@ -1,0 +1,21 @@
+<ion-content>
+  <div class="bk">
+    <div class="title">
+        <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <span>设置密码</span>
+    </div>
+    <div class="input">
+        <img  src="../../assets/img/password.png" alt="">
+        <input [(ngModel)]="pwd" type="password" placeholder="请设置您的新密码" class="inp">
+    </div>
+    <div class="input">
+        <img  src="../../assets/img/password.png" alt="">
+        <input [(ngModel)]="againpwd" type="password" placeholder="请再次确认您的密码" class="inp">
+    </div>
+    <button (click)="sure()" class="sure">确定</button>
+  </div>
+</ion-content>

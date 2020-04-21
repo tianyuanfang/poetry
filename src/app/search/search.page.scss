@@ -17,15 +17,18 @@ ion-content {
         }
         #search{
             color:grey;
-            font-size:24px!important;
+            font-size:28px!important;
             // border:1px solid blue;
             float: left;
         }
+        margin-bottom: 10px;
     }
+
     ul{
         margin:0;
         padding: 0;
         list-style: none;
+        margin-top: 20px;
         li{
             float: left;
             width:70px;

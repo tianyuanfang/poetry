@@ -3,8 +3,10 @@ ion-header{
     display: block;
     float: left;
     border: 1px solid rgb(223, 221, 221);
-    width: 40px;
+    // width: 40px;
     height: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 14px;
     margin-left: 2%;
     text-align: center;
@@ -28,8 +30,6 @@ ion-content{
     // border:1px solid red;
     background-color:rgb(248, 244, 244)!important;
     ion-slides{
-      // background-color:rgb(248, 244, 244);
-      
       ion-slide{
         // border:1px solid green;
         .total{

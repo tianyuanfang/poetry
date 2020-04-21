@@ -1,11 +1,7 @@
 
-ion-header{
-    
-}
 
 ion-content{
     #content{
-       
         .head{
             margin-top: 20px;
             width: 100%;
@@ -23,11 +19,26 @@ ion-content{
         ul{ 
             margin-left: 40px;
             width:280px;
-            list-style: none;
-            padding: 0px;
-            li{padding: 0px;margin:0px;
+            // height: 500px;
+            // border: 1px solid black;
+            li{
                 line-height:40px;
-                input{margin-left:5px;border:none;border-bottom: 1px solid grey;}
+                // border: 1px solid blue;
+                margin:0 auto;
+                input{
+                    margin-left:5px;
+                    // border:none;
+                    border: 1px solid grey;
+                    // width: 200px;
+                    margin-left: 15px;
+                    height: 30px;
+                    padding-left: 10px;
+                }
+                img{
+                    width: 23px;
+                    height: 23px;
+                    margin-top: 10px;
+                }
                 .line{width: 220px;}
                 form{display: inline-block;}
                 select{margin-left: 5px;}

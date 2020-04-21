@@ -1,0 +1,89 @@
+ion-content{
+    .bk{
+        background: url(../../assets/icon/about1.jpg) no-repeat;
+        background-size: cover;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+       
+    }
+    #logo{
+        // border:1px solid black;
+        margin-top:80px;
+        margin-bottom: 60px;
+        text-align: center;
+        span{
+            // border:1px solid blue;
+            letter-spacing:50px;
+            font-family: STXingkai  ;
+            padding-left: 50px;
+            font-size:32px;
+            color:rgb(250, 4, 33);
+        }
+        
+    }
+
+    .inp{
+        border-bottom:1px solid grey;
+        width: 240px;
+        height:30px;
+        background: none;
+        border-top:none;
+        border-left: none;
+        border-right: none;
+        // border-radius: 8px;
+    }
+    #input{
+        width:100%;
+        height:230px;
+        margin: 20px auto;
+        //  border:1px solid black;
+        div{
+            // border:1px solid black;
+            width:290px;
+            height: 35px;
+            margin:0 auto;
+            img{
+                // border: 1px solid blue;
+                float: left;
+            }
+            input{
+                float: left;
+                margin-left: 10px;
+            }
+        }
+        a{
+            display: block;
+            font-size:15px;
+            margin-right:50px;
+            margin-top:20px;
+            color: rgb(92, 91, 91);
+            text-decoration: underline;
+            float: right;
+        }
+        #submit{
+            display: block;
+            border: 1px solid rgb(252, 4, 33);
+            border-radius: 2px;
+            background-color: rgb(253, 1, 31);
+            color:white;
+            width:150px;
+            height:40px;
+            margin:150px auto;
+        }
+    }
+    #register{
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        a{
+            text-decoration:underline;
+            color:gray;
+        }
+    }
+}
+
+

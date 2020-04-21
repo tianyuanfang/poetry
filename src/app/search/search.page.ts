@@ -16,23 +16,19 @@ export class SearchPage implements OnInit {
   back() {
     this.nav.back();
   }
-//搜索
+//搜索,根据类别显示
   searchText;
-  search(){
-    localStorage.setItem('searchText',this.searchText);
-    this.nav.navigateForward("/searchdetail");
-  }
-
-//根据类别显示
-  fun(i){
+  search(i){
     if(i==1){
       localStorage.setItem('searchText','风景');
     }else if(i==2){
       localStorage.setItem('searchText','离别');
     }else if(i==3){
       localStorage.setItem('searchText','思乡');
+    }else if(i==4){
+      localStorage.setItem('searchText','战争');
     }else{
-      localStorage.setItem('searchText','诗经');
+      localStorage.setItem('searchText',this.searchText);
     }
     this.nav.navigateForward("/searchdetail");
   }

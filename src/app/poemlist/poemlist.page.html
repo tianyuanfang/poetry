@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <ion-icon style="float:left;width:50px;height:30px;color:blue" slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <div class="title">
+    <img src="{{poemsrc}}">
+    <span>{{poemlist}}</span>
+  </div>
+  <ul class="ul">
+      <li (click)="goPoemdetail()">
+          <div>
+              蜀相<span>[唐]杜甫</span>
+          </div>
+          <p>出师未捷身先死，长使英雄泪满襟。</p>
+      </li>
+      <li>
+          <div>
+              浣溪沙<span>[清]纳兰性德</span>
+            </div>
+            <p>一半残阳下小楼，朱帘斜控软金钩。</p>
+      </li>
+      <li>
+          <div>
+              茅屋为秋风所破歌<span>[唐]杜甫</span>
+            </div>
+            <p>八月秋高风怒号，卷我屋上三重茅。</p>
+      </li>
+    </ul>
+</ion-content>

@@ -5,29 +5,14 @@
               <ion-icon style="float:left;width:50px;height:30px;color:black" slot="icon-only" name="arrow-back"></ion-icon>
           </ion-button>
       </ion-buttons>
-    <ion-title>hometotal</ion-title>
+    <ion-title>选择摘录范围</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <div class="body">
-        <div class="title">
-            从下面的九个字中识别出一句五言诗词。
-        </div>
-            
-        <div class="answer">
-            <div>众</div>
-            <div>山</div>
-            <div>尽</div>
-            <div>决</div>
-            <div>鸟</div>
-            <div>眦</div>
-            <div>高</div>
-            <div>飞</div>
-            <div>千</div>
-        </div>
-
-        <button>提交</button>
-    </div>
-
+   <ul id="theme">
+        <li *ngFor="let item of selectedTheme,let i = index" (click)="poem(i)">
+            {{item}}
+        </li>
+    </ul>   
 </ion-content>

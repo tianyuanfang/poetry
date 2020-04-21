@@ -1,16 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>searchdetail</ion-title>
-  </ion-toolbar>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="back()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="body">
-      <div class="title">
-          <input id="empty" type="text" name="empty" value="">，
-          <input id="dot" type="text" name="dot" value="直挂云帆济沧海">
-      </div>
+  <ul class="ul" >
+    <li class="li" [style.display]="result1?'block':'none'">诗人</li>
+    <li *ngFor="let item of result1,let i = index" (click)="goPoemdetail()">
+        <div>
+            {{item.author}}
+        </div><span style='color: red;'></span>
+        <p>出师未捷身先死，长使英雄泪满襟。</p>
+        
+    </li>
+    <li class="li" [style.display]="result2?'block':'none'">作品</li>
+    <li *ngFor="let item of result2,let i = index" (click)="goPoemdetail()">
+        <div>
+            {{item.title}}<span>[{{item.dynasty}}]{{item.author}}</span>
+        </div>
+        <p>{{item.poem}}</p>
+    </li>
+    <li class="li" [style.display]="result3?'block':'none'">{{searchText}}</li>
+    <li *ngFor="let item of result3,let i = index" (click)="goPoemdetail()">
+        <div>
+            {{item.title}}<span>[{{item.dynasty}}]{{item.author}}</span>
+        </div>
+        <p>{{item.poem}}</p>
+    </li>
+  </ul>
 
-      <input id="answer" type="text" name="answer" placeholder="请填写">
-  </div>
 </ion-content>

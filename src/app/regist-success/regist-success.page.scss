@@ -1,0 +1,36 @@
+ion-content{
+        .content{
+            background: url(../../assets/icon/poem2.jpg) no-repeat;
+            background-size: cover;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            div{
+                width: 300px;
+                height:30px;
+                // border:1px solid black;
+                margin-left:30px;
+                margin-top: 100px;
+                text-align: center;
+                font-size:20px;
+                color:black;
+                
+            }
+            button{
+                margin-top:100px;
+                margin-left:240px;
+                width:100px;
+                height:40px;
+                bottom:5px;
+                background: none;
+                border-radius: 5px;
+                font-size: 16px;
+                color:white;
+                background-color: #FD273F;
+            }
+        }
+    
+}

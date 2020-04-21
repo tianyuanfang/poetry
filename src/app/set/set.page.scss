@@ -1,22 +1,13 @@
-ion-header{
-height:50px;
-img{margin-top:9px;}
-}
-
-
 
 ion-content{
-margin:0px;
 ul{
-    width: 97%;
-    margin-left:1.4%;
-    font-size: 14px;
-    padding: 0px;
-    list-style:none;
+    width: 100%;
     li{
         border-bottom:1px solid grey;
         height: 50px;
         line-height: 50px;
+        padding-left: 15px;
+        font-size: 18px;
         div{
             color:grey;
             display: inline-block;

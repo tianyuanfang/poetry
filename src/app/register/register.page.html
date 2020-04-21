@@ -1,0 +1,32 @@
+<ion-content>
+<div class="bk">
+  <div class="title">
+    <ion-buttons slot="start">
+        <ion-button (click)="back()">
+            <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </div>
+  <div class="div">
+      <div class="div1">
+          <span class="span1">+86</span>&nbsp;&nbsp;
+          <input [(ngModel)]="phone" type="text" placeholder="请输入你的注册手机号" id="phoneinp"  (focus)="resetPhone()">
+      </div>
+      <span id="reminder"></span>
+      <div class="div1">
+          <span class="span1">设置密码</span>&nbsp;&nbsp;
+          <input [(ngModel)]="pwd" type="password" placeholder="请输入你的密码(6-16位)" id="pwdinp" (blur)="reminderPwd()" (focus)="resetPwd()">
+      </div>
+      <span id="remindertwo"></span>
+      <div class="div1">
+          <span class="span1">确认密码</span>&nbsp;&nbsp;
+          <input [(ngModel)]="againpwd" type="password" placeholder="请再次确认你的密码" id="againpwdinp" (blur)="verifyPwd()" (focus)="resetagainPwd()">
+      </div>
+      <span id="reminderthree"></span>
+
+
+      <button (click)="register()" class="register">立即注册</button>
+  </div>
+
+</div>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button (click)="back()">
+              <ion-icon style="float:left;width:50px;height:30px;color:blue" slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+    <ion-title>评论</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="comment">
+    <ul class="exter">
+      <li *ngFor="let item of homeComments;let i = index" class="exterli">
+          <span id="user" ><img src="{{item?.head}}"></span>
+          <div id="commentdetail">
+              <p style="margin:0  ">{{item?.userName}}</p>
+              <p style="margin:0  ">{{item?.CommentText}}</p>
+              <p style="margin:0  " class="data">
+                  {{item.CommentDate}}
+              </p>
+          </div>
+      </li>
+    </ul>
+    <br>
+  </div> 
+</ion-content>
+
+<ion-footer>
+  <input type="text" id="inpcomment">
+  <button id="btncomment" (click)='comment()'>评论</button>
+</ion-footer>

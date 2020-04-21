@@ -39,6 +39,14 @@ const routes: Routes = [
     loadChildren: () => import('./searchdetail/searchdetail.module').then( m => m.SearchdetailPageModule)
   },
   {
+    path: 'comment',
+    loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
+  },
+  {
+    path: 'poemgameone',
+    loadChildren: () => import('./poemgameone/poemgameone.module').then( m => m.PoemgameonePageModule)
+  },
+  {
     path: 'set',
     loadChildren: () => import('./set/set.module').then( m => m.SetPageModule)
   },
@@ -75,12 +83,40 @@ const routes: Routes = [
     loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
   },
   {
+    path: 'poemlist',
+    loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
+  },
+  {
     path: 'poemgame',
     loadChildren: () => import('./poemgame/poemgame.module').then( m => m.PoemgamePageModule)
   },
   {
     path: 'poemgametwo',
     loadChildren: () => import('./poemgametwo/poemgametwo.module').then( m => m.PoemgametwoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'regist-success',
+    loadChildren: () => import('./regist-success/regist-success.module').then( m => m.RegistSuccessPageModule)
+  },
+  {
+    path: 'forgetpwd-one',
+    loadChildren: () => import('./forgetpwd-one/forgetpwd-one.module').then( m => m.ForgetpwdOnePageModule)
+  },
+  {
+    path: 'forgetpwd-two',
+    loadChildren: () => import('./forgetpwd-two/forgetpwd-two.module').then( m => m.ForgetpwdTwoPageModule)
+  },
+  {
+    path: 'poemgamethree',
+    loadChildren: () => import('./poemgamethree/poemgamethree.module').then( m => m.PoemgamethreePageModule)
   },
 
 ];
