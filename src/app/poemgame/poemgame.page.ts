@@ -15,7 +15,7 @@ export class PoemgamePage implements OnInit {
   back() {
     this.nav.back();
   }
-  goPoemgameTwo(){
-    this.nav.navigateForward("/poemgametwo");
+  goPoemgameOne(){
+    this.nav.navigateForward("/poemgameone");
   }
 }

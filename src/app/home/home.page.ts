@@ -11,7 +11,7 @@ import { HttpClient } from "@angular/common/http";
 export class HomePage {
   
   data;
-  poemtype;//标记主页浏览的类别，默认为全部
+  poemtype='全部';//标记主页浏览的类别，默认为全部
   poem;
 
   constructor(public nav:NavController,public http:HttpClient){
@@ -36,7 +36,7 @@ export class HomePage {
     var span=document.getElementById("poemtype");
     span.innerHTML=this.poemtype?this.poemtype:"全部";
 
-    this.http.post('/api/tabs/home',{"author":this.poemtype}).subscribe(res=>{
+    this.http.post('/api/tabs/home',{"author":span.innerHTML}).subscribe(res=>{
         console.log(res)
         this.poem=res;
     })

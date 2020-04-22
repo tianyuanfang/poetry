@@ -22,9 +22,12 @@ export class PoemPage  {
               {imgsrc:"../../assets/icon/33.jpg",imgname:"山"},{imgsrc:"../../assets/icon/34.jpg",imgname:"水"},{imgsrc:"../../assets/icon/35.jpg",imgname:"日"},{imgsrc:"../../assets/icon/36.jpg",imgname:"月"}];
   num;//自己发表的作品数
   data;//承载返回的信息
-  userId;//登录用户的id
-  Flag0=[];//标记该作品本用户是否点赞
-  Flag1=[];//标记该作品本用户是否收藏
+  cid;//作品id
+  userId=1;//登录用户的id
+  Flag0;//盛放该用户点赞的作品id
+  Flag1;//盛放该用户收藏的作品id
+  flag0=[];//标记该作品本用户是否点赞
+  flag1=[];//标记该作品本用户是否收藏
   ionViewWillEnter(){
     //用户本人发布作品数量
     this.http.post('/api/tabs/poem/num',{"uid":1}).subscribe(res=>{
@@ -35,19 +38,82 @@ export class PoemPage  {
     this.http.get("/api/tabs/poem/article").subscribe(res=>{
       console.log(res);
       this.data=res;
-      for(var i=0;i<this.data.length;i++){
-        
+      for(var k=0;k<this.data.length;k++){
+        this.flag0[k]=false;
+        this.flag1[k]=false;
       }
+      this.http.post("/api/tabs/poem/love",{"uid":1}).subscribe(res=>{
+        this.Flag0=res;
+        console.log('0',this.Flag0);
+        //判断喜欢的
+        for(var i=0;i<this.Flag0.length;i++){
+          for(var j=0;j<this.data.length;j++){
+            if(this.Flag0[i].cid==this.data[j].cid){
+              this.flag0[j]=true;
+            }
+          }
+        }
+        this.http.post("/api/tabs/poem/collection",{"uid":1}).subscribe(res=>{
+          console.log('1',res);
+          this.Flag1=res;
+          
+          //判断收藏的
+          for(var i=0;i<this.Flag1.length;i++){
+            for(var j=0;j<this.data.length;j++){
+              if(this.Flag1[i].cid==this.data[j].cid){
+                this.flag1[j]=true;
+              }
+            }
+          }
+        })
+      })
+      console.log(this.flag0)
     })
-    
 
   }            
+
+  
   
   //分类和创作交换
   isActive=0; 
   isClick(i){
     this.isActive=i;
   }
+//点赞和取消赞
+  dianZan(i){
+    this.cid=this.data[i].cid;
+    console.log(this.cid);
+    if(this.flag0[i]==true){
+      this.flag0[i]=false;
+      this.data[i].love--;
+      this.http.post('/api/tabs/poem/delLove',{uid:this.userId,cid:this.cid}).subscribe(data=>{
+        console.log(data);
+      });
+    }else{
+      this.flag0[i]=true;
+      this.data[i].love++;
+      this.http.post('/api/tabs/poem/addLove',{uid:this.userId,cid:this.cid}).subscribe(data=>{
+        console.log(data);
+      });
+    }
+  }
+//收藏和取消收藏
+Collect(i){
+  this.cid=this.data[i].cid;
+  if(this.flag1[i]==true){
+    this.flag1[i]=false;
+    this.data[i].collection--;
+    this.http.post('/api/tabs/poem/delCollect',{uid:this.userId,cid:this.cid}).subscribe(data=>{
+      console.log(data);
+    });
+  }else{
+    this.flag1[i]=true;
+    this.data[i].collection++;
+    this.http.post('/api/tabs/poem/addCollect',{uid:this.userId,cid:this.cid}).subscribe(data=>{
+      console.log(data);
+    });
+  }
+}
 
   flag=false;
   hideList;
@@ -63,7 +129,12 @@ export class PoemPage  {
 
 //进入评论页
   Comment(i){
+    localStorage.setItem('cid',this.data[i].cid);
     this.nav.navigateForward("/comment");
+  }
+//进入创作诗词页
+  goCreate(){
+    this.nav.navigateForward("/createpoem");
   }
 
   gopoemlist1(i){

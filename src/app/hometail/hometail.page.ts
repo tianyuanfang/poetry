@@ -13,8 +13,6 @@ export class HometailPage{
   poemPid;//记录本地存储的诗词id
   data;//承载后端传回的信息
   extract;
-  Flag0;//标志此诗是否收藏
-  Flag1;//标志此诗是否喜爱
   ionViewWillEnter(){
     this.poemPid=localStorage.getItem('poemPid');
     this.http.post('/api/tabs/hometail',{"pid":this.poemPid}).subscribe(res=>{
@@ -23,10 +21,7 @@ export class HometailPage{
       this.extract=this.data.poem.split('\n');
       console.log(this.extract);
     })
-    //此用户是否点赞和收藏
-    this.http.post('/api/tabs/hometatil/zan&coll',{'pid':this.poemPid,'uid':2}).subscribe(res=>{
-
-    })
+    
   }
 
   //标记选中那个switch
@@ -41,36 +36,36 @@ export class HometailPage{
   }
 
   //点赞或取消赞
-  clickZan(){
-    if(this.Flag0==false){
-      //传给服务端那个用户收藏了哪个作品，服务端在数据库记录
-      this.http.post('/api/homedetail/love',{userID:2,pid:this.poemPid}).subscribe(data=>{
-        console.log(data);
-      });
-      this.Flag0=true;
-    }else{
-      this.http.post('/api/homedetail/dellove',{userID:2,projectID:this.poemPid}).subscribe(data=>{
-        console.log(data);
-      });
-      this.Flag0=false;
-    }      
-  }
+  // clickZan(){
+  //   if(this.Flag0==false){
+  //     //传给服务端那个用户收藏了哪个作品，服务端在数据库记录
+  //     this.http.post('/api/homedetail/love',{userID:2,pid:this.poemPid}).subscribe(data=>{
+  //       console.log(data);
+  //     });
+  //     this.Flag0=true;
+  //   }else{
+  //     this.http.post('/api/homedetail/dellove',{userID:2,projectID:this.poemPid}).subscribe(data=>{
+  //       console.log(data);
+  //     });
+  //     this.Flag0=false;
+  //   }      
+  // }
 
-   //收藏此作品
-  clickCollect(){
-    if(this.Flag1==false){
-      //传给服务端那个用户收藏了哪个作品，服务端在数据库记录
-      this.http.post('/api/homedetail/collect',{userID:2,pid:this.poemPid}).subscribe(data=>{
-        console.log(data);
-      });
-      this.Flag1=true;
-    }else{
-      this.http.post('/api/homedetail/delcollect',{userID:2,projectID:this.poemPid}).subscribe(data=>{
-        console.log(data);
-      });
-      this.Flag1=false;
-    }      
-  }
+  //  //收藏此作品
+  // clickCollect(){
+  //   if(this.Flag1==false){
+  //     //传给服务端那个用户收藏了哪个作品，服务端在数据库记录
+  //     this.http.post('/api/homedetail/collect',{userID:2,pid:this.poemPid}).subscribe(data=>{
+  //       console.log(data);
+  //     });
+  //     this.Flag1=true;
+  //   }else{
+  //     this.http.post('/api/homedetail/delcollect',{userID:2,projectID:this.poemPid}).subscribe(data=>{
+  //       console.log(data);
+  //     });
+  //     this.Flag1=false;
+  //   }      
+  // }
 
 
   showall() {

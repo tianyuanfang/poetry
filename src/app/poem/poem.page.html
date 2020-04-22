@@ -38,7 +38,7 @@
         <div>
             <span class="span2">
                 已发布({{num}})
-                <img src="../../assets/icon/write.png">
+                <img src="../../assets/icon/write.png" (click)="goCreate()">
             </span>
             
             <ul id="ul">
@@ -63,11 +63,11 @@
                     </div>
                     <div id="footer">
                         <span class="span">
-                            <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [style.color]="Flag0[i]?'#fd273f':'gray'"></ion-icon>
+                            <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [style.color]="flag0[i]?'red':'gray'"></ion-icon>
                             <span>{{item.love}}</span>
                         </span>
                         <span class="span">
-                            <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)" [style.color]="Flag1[i]?'#fd273f':'gray'"></ion-icon> 
+                            <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)" [style.color]="flag1[i]?'yellow':'gray'"></ion-icon> 
                             <span>{{item.collection}}</span>
                         </span>
                         <span class="span">

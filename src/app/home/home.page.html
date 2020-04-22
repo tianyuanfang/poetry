@@ -9,11 +9,12 @@
         <ion-slides>
                 <ion-slide *ngFor="let item of poem,let i = index" (click)="gohometail(i)">
                     <div class="total">
-                        <div class="leftimg"><img src="../../assets/{{item?.image}}"></div>
-                        <div class="rightword">
+                        <div class="topimg"><img src="../../assets/{{item?.image}}"></div>
+                        <div class="bottomword">
+                            <div id="thirdrow"><p>{{item?.author}}</p></div>
                             <div id="firstrow">{{item.extract.slice(0,item.extract.length-1).split('，')[0]}}</div>
                             <div id="secondrow">{{item.extract.slice(0,item.extract.length-1).split('，')[1]}}</div>
-                            <div id="thirdrow"><p>{{item?.author}}</p></div>
+                            
                         </div>
                     </div>
                 </ion-slide>

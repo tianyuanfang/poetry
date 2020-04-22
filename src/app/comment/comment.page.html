@@ -12,13 +12,13 @@
 <ion-content>
   <div class="comment">
     <ul class="exter">
-      <li *ngFor="let item of homeComments;let i = index" class="exterli">
-          <span id="user" ><img src="{{item?.head}}"></span>
+      <li *ngFor="let item of data;let i = index" class="exterli">
+          <span id="user" ><img src="../../assets/{{item?.avatar}}"></span>
           <div id="commentdetail">
-              <p style="margin:0  ">{{item?.userName}}</p>
-              <p style="margin:0  ">{{item?.CommentText}}</p>
+              <p style="margin:0  ">{{item?.nickname}}</p>
+              <p style="margin:0  ">{{item?.content}}</p>
               <p style="margin:0  " class="data">
-                  {{item.CommentDate}}
+                  {{item?.time.replace("T"," ").slice(0,item.time.length-5)}}
               </p>
           </div>
       </li>
