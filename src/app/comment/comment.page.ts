@@ -42,14 +42,13 @@ comment(){
         console.log(data);
         this.head=data[0]['avatar'];
         this.userName=data[0]['nickname'];
-        for(var i=0;i<2;i++){
-          $(".exter").append("<li class='exterli' style='padding-left:10px;padding-top:10px;'><span id='user' style='float: left;' ><img src='' id='uimg' style='width:30px;height:30px;border-radius:50%;'></span><div id='commentdetail'><p style='margin:0;padding-left: 10%;padding-top: 5px;' id='p1'></p><p style='margin:0;padding-left: 10%;padding-top: 5px;' id='p2'></p><p style='margin:0;padding-left:10%;padding-top:5px;font-size:10px;color:gray;' class='data' id='p3'></p></div></li>");
-          $("#uimg").attr('src','../../assets/'+this.head);
-          $("#p1").text(this.userName);//username
-          $("#p2").text(this.inpcomment.value);
-          $("#p3").text(this.time);//时间
-          this.inpcomment.value='';
-        }
+        $(".exter").append("<li class='exterli' style='padding-left:10px;padding-top:10px;'><span id='user' style='float: left;' ><img src='' id='uimg' style='width:30px;height:30px;border-radius:50%;'></span><div id='commentdetail'><p style='margin:0;padding-left: 10%;padding-top: 5px;' id='p1'></p><p style='margin:0;padding-left: 10%;padding-top: 5px;' id='p2'></p><p style='margin:0;padding-left:10%;padding-top:5px;font-size:10px;color:gray;' class='data' id='p3'></p></div></li>");
+        $("#uimg").attr('src','../../assets/'+this.head);
+        $("#p1").text(this.userName);//username
+        $("#p2").text(this.inpcomment.value);
+        $("#p3").text(this.time);//时间
+        this.inpcomment.value='';
+        
         
       })
       

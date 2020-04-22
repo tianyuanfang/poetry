@@ -7,7 +7,54 @@
 
 <ion-content>   
     <div [ngSwitch]='isActive' id="switch">
+
         <div *ngSwitchCase='0' id="switch0">
+                <div>
+                    <span class="span2">
+                        已发布({{num}})
+                        <img src="../../assets/icon/write.png" (click)="goCreate()">
+                    </span>
+                    
+                    <ul id="ul">
+                        <li class="li" *ngFor="let item of data,let i = index">
+                            <div id="header">
+                                <div class="div1"><img src="../../assets/{{item?.avatar}}" alt=""></div>
+                                <div class="div2"><span>{{item?.nickname}}</span><span>{{item?.time.replace("T"," ").slice(0,item.time.length-5)}}</span></div>
+                                <div class="div3">
+                                    <ion-icon name="ios-arrow-down" (click)="showList(i)"></ion-icon>
+                                    <ul class="hideList">
+                                        <li><i class="iconfont icon-fenxiang-copy"></i>分享到<i class="iconfont icon-qq1"></i><i class="iconfont icon-weixin"></i></li>
+                                        <li (click)="edit(item.pID,i)"><i class="iconfont icon-bianji"></i>编辑</li>
+                                        <li (click)="del(item.pID,i)"><i class="iconfont icon-picture-delet"></i>删除</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="content">
+                                <p>
+                                {{item?.content}}
+                                </p>
+                                <img src="../../assets/{{item?.image}}" alt="">
+                            </div>
+                            <div id="footer">
+                                <span class="span">
+                                    <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [style.color]="flag0[i]?'red':'gray'"></ion-icon>
+                                    <span>{{item.love}}</span>
+                                </span>
+                                <span class="span">
+                                    <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)" [style.color]="flag1[i]?'yellow':'gray'"></ion-icon> 
+                                    <span>{{item.collection}}</span>
+                                </span>
+                                <span class="span">
+                                    <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
+                                    <span>{{item.assess_num}}</span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </div>
+
+        <div *ngSwitchCase='1' id="switch1">
             <div style="width:500px;margin-top:10px;"></div>
             <p>选集</p>
             <ul class="classify">
@@ -34,50 +81,6 @@
         </div>
 
 
-      <div *ngSwitchCase='1' id="switch1">
-        <div>
-            <span class="span2">
-                已发布({{num}})
-                <img src="../../assets/icon/write.png" (click)="goCreate()">
-            </span>
-            
-            <ul id="ul">
-                <li class="li" *ngFor="let item of data,let i = index">
-                    <div id="header">
-                        <div class="div1"><img src="../../assets/{{item?.avatar}}" alt=""></div>
-                        <div class="div2"><span>{{item?.nickname}}</span><span>{{item?.time.replace("T"," ").slice(0,item.time.length-5)}}</span></div>
-                        <div class="div3">
-                            <ion-icon name="ios-arrow-down" (click)="showList(i)"></ion-icon>
-                            <ul class="hideList">
-                                <li><i class="iconfont icon-fenxiang-copy"></i>分享到<i class="iconfont icon-qq1"></i><i class="iconfont icon-weixin"></i></li>
-                                <li (click)="edit(item.pID,i)"><i class="iconfont icon-bianji"></i>编辑</li>
-                                <li (click)="del(item.pID,i)"><i class="iconfont icon-picture-delet"></i>删除</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="content">
-                        <p>
-                        {{item?.content}}
-                        </p>
-                        <img src="../../assets/{{item?.image}}" alt="">
-                    </div>
-                    <div id="footer">
-                        <span class="span">
-                            <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [style.color]="flag0[i]?'red':'gray'"></ion-icon>
-                            <span>{{item.love}}</span>
-                        </span>
-                        <span class="span">
-                            <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)" [style.color]="flag1[i]?'yellow':'gray'"></ion-icon> 
-                            <span>{{item.collection}}</span>
-                        </span>
-                        <span class="span">
-                            <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
-                            <span>{{item.assess_num}}</span>
-                        </span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-      </div>
+      
     </div>
 </ion-content>
