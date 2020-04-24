@@ -7,6 +7,15 @@ ion-content{
         font-size: 18px;
         line-height: 32px;
         text-align: center;
+        #time{
+            float:right;
+            margin-right:20px;
+            width: 30px;
+            height: 30px;
+            display: block;
+            border-radius: 50%;
+            border:1px soild grey;
+        }
         .title{
             width: 100%;
             display: flex;

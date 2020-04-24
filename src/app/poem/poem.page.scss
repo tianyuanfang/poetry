@@ -27,6 +27,7 @@ ion-header{
 }
 
 ion-content{
+    white-space:pre-wrap;//使后台传过来的换行符起作用
     border: none;
     #switch0{
         white-space:pre-wrap;

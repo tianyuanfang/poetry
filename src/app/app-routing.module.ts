@@ -22,10 +22,10 @@ const routes: Routes = [
     path: 'poem',
     loadChildren: () => import('./poem/poem.module').then( m => m.PoemPageModule)
   },
-  {
-    path: 'hometail',
-    loadChildren: () => import('./hometail/hometail.module').then( m => m.HometailPageModule)
-  },
+  // {
+  //   path: 'hometail',
+  //   loadChildren: () => import('./hometail/hometail.module').then( m => m.HometailPageModule)
+  // },
   // {
   //   path: 'hometotal',
   //   loadChildren: () => import('./hometotal/hometotal.module').then( m => m.HometotalPageModule)
@@ -42,34 +42,34 @@ const routes: Routes = [
     path: 'comment',
     loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
   },
-  {
-    path: 'poemgameone',
-    loadChildren: () => import('./poemgameone/poemgameone.module').then( m => m.PoemgameonePageModule)
-  },
+  // {
+  //   path: 'poemgameone',
+  //   loadChildren: () => import('./poemgameone/poemgameone.module').then( m => m.PoemgameonePageModule)
+  // },
   // {
   //   path: 'set',
   //   loadChildren: () => import('./set/set.module').then( m => m.SetPageModule)
   // },
-  // {
-  //   path: 'myself',
-  //   loadChildren: () => import('./myself/myself.module').then( m => m.MyselfPageModule)
-  // },
-  // {
-  //   path: 'setmyself',
-  //   loadChildren: () => import('./setmyself/setmyself.module').then( m => m.SetmyselfPageModule)
-  // },
-  // {
-  //   path: 'mylike',
-  //   loadChildren: () => import('./mylike/mylike.module').then( m => m.MylikePageModule)
-  // },
-  // {
-  //   path: 'mycollect',
-  //   loadChildren: () => import('./mycollect/mycollect.module').then( m => m.MycollectPageModule)
-  // },
-  // {
-  //   path: 'myfollow',
-  //   loadChildren: () => import('./myfollow/myfollow.module').then( m => m.MyfollowPageModule)
-  // },
+  {
+    path: 'myself',
+    loadChildren: () => import('./myself/myself.module').then( m => m.MyselfPageModule)
+  },
+  {
+    path: 'setmyself',
+    loadChildren: () => import('./setmyself/setmyself.module').then( m => m.SetmyselfPageModule)
+  },
+  {
+    path: 'mylike',
+    loadChildren: () => import('./mylike/mylike.module').then( m => m.MylikePageModule)
+  },
+  {
+    path: 'mycollect',
+    loadChildren: () => import('./mycollect/mycollect.module').then( m => m.MycollectPageModule)
+  },
+  {
+    path: 'myfollow',
+    loadChildren: () => import('./myfollow/myfollow.module').then( m => m.MyfollowPageModule)
+  },
   // {
   //   path: 'mycreate',
   //   loadChildren: () => import('./mycreate/mycreate.module').then( m => m.MycreatePageModule)
@@ -78,22 +78,22 @@ const routes: Routes = [
   //   path: 'aboutus',
   //   loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
   // },
+  {
+    path: 'recommentpoem',
+    loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
+  },
   // {
-  //   path: 'recommentpoem',
-  //   loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
+  //   path: 'poemlist',
+  //   loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
   // },
-  {
-    path: 'poemlist',
-    loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
-  },
-  {
-    path: 'createpoem',
-    loadChildren: () => import('./createpoem/createpoem.module').then( m => m.CreatepoemPageModule)
-  },
-  {
-    path: 'poemgame',
-    loadChildren: () => import('./poemgame/poemgame.module').then( m => m.PoemgamePageModule)
-  },
+  // {
+  //   path: 'createpoem',
+  //   loadChildren: () => import('./createpoem/createpoem.module').then( m => m.CreatepoemPageModule)
+  // },
+  // {
+  //   path: 'poemgame',
+  //   loadChildren: () => import('./poemgame/poemgame.module').then( m => m.PoemgamePageModule)
+  // },
   // {
   //   path: 'poemgametwo',
   //   loadChildren: () => import('./poemgametwo/poemgametwo.module').then( m => m.PoemgametwoPageModule)

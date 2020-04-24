@@ -11,17 +11,18 @@
 
 <ion-content>
   <div class="body">
+      <div id="time">20s</div>
     <div class="title">
       <span>1</span>
       、郑板桥的《竹石》是一首咏物的诗，他跟下列那首诗的表现手法是相同的？
     </div>
-    <input id="answerA" type="text" name="answerA" value="《石灰吟》">
-    <input id="answerB" type="text" name="answerB" value="《静夜思》">
-    <input id="answerC" type="text" name="answerC" value="《将进酒》">
-    <input id="answerC" type="text" name="answerC" value="《茅屋为秋风所破歌》">
+    <input id="answerA" type="text" name="answerA" value="《石灰吟》" (click)='answerA()'>
+    <input id="answerB" type="text" name="answerB" value="《静夜思》" (click)='answerA()'>
+    <input id="answerC" type="text" name="answerC" value="《将进酒》" (click)='answerA()'>
+    <input id="answerC" type="text" name="answerC" value="《茅屋为秋风所破歌》" (click)='answerA()'>
   </div>
 </ion-content>
 
-<ion-footer (click)="goPoemgameTwo()">
+<ion-footer (click)="goPoemgameOne()">
   下一个游戏
 </ion-footer>

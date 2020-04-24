@@ -1,7 +1,7 @@
 <ion-header>
         <ul class="navList">
-            <li  (click)="isClick(0)" [class.first]="isActive==0" style="border-top-left-radius:3px;border-bottom-left-radius:3px">分类</li>
-            <li  (click)="isClick(1)" [class.second]="isActive==1"  style="border-top-right-radius:3px;border-bottom-right-radius:3px;">创作</li>
+            <li  (click)="isClick(0)" [class.first]="isActive==0" style="border-top-left-radius:3px;border-bottom-left-radius:3px">创作</li>
+            <li  (click)="isClick(1)" [class.second]="isActive==1"  style="border-top-right-radius:3px;border-bottom-right-radius:3px;">分类</li>
         </ul>
 </ion-header>
 
@@ -18,8 +18,8 @@
                     <ul id="ul">
                         <li class="li" *ngFor="let item of data,let i = index">
                             <div id="header">
-                                <div class="div1"><img src="../../assets/{{item?.avatar}}" alt=""></div>
-                                <div class="div2"><span>{{item?.nickname}}</span><span>{{item?.time.replace("T"," ").slice(0,item.time.length-5)}}</span></div>
+                                <div class="div1"><img src="../../assets/{{item?.avatar}}" alt="" (click)="userDetail(i)"></div>
+                                <div class="div2"><span>{{item?.nickname}}</span><span>{{item?.time}}</span></div>
                                 <div class="div3">
                                     <ion-icon name="ios-arrow-down" (click)="showList(i)"></ion-icon>
                                     <ul class="hideList">

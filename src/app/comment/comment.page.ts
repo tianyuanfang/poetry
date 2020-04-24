@@ -53,7 +53,7 @@ comment(){
       })
       
     });
-  
+    // location.reload(); 
 }
 
 month;

@@ -1,35 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-toolbar>
+      <ion-buttons slot="start">
         <ion-button (click)="back()">
             <ion-icon style="float:left;width:50px;height:30px;color:blue" slot="icon-only" name="arrow-back"></ion-icon>
         </ion-button>
-    </ion-buttons>
-    <ion-title>收藏</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-<div class="body">
-  <ul class="ul">
-    <li (click)="goPoemdetail()">
-        <div>
-            蜀相<span>[唐]杜甫</span>
-        </div>
-        <p>出师未捷身先死，长使英雄泪满襟。</p>
-    </li>
-    <li>
-        <div>
-            浣溪沙<span>[清]纳兰性德</span>
-          </div>
-          <p>一半残阳下小楼，朱帘斜控软金钩。</p>
-    </li>
-    <li>
-        <div>
-            茅屋为秋风所破歌<span>[唐]杜甫</span>
-          </div>
-          <p>八月秋高风怒号，卷我屋上三重茅。</p>
-    </li>
-  </ul>
-</div>
-</ion-content>
+      </ion-buttons>
+      <ion-title>收藏</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <div class="body">
+      <ul id="ul">
+        <li class="li" *ngFor="let item of data,let i = index">
+            <div id="header">
+                <div class="div1"><img src="../../assets/{{item?.avatar}}" alt="" (click)="userDetail(i)"></div>
+                <div class="div2"><span>{{item?.nickname}}</span><span>{{item.article.time}}</span></div>
+            </div>
+            <div id="content">
+                <p>
+                {{item.article.content}}
+                </p>
+                <img src="../../assets/{{item.article.image}}" alt="">
+            </div>
+            <div id="footer">
+                <span class="span">
+                    <ion-icon ios="ios-heart" md="md-heart" class="zan" (click)="dianZan(i)" [style.color]="loveflag[i]?'red':'gray'"></ion-icon>
+                    <span>{{item.love}}</span>
+                </span>
+                <span class="span">
+                    <ion-icon md="md-star" ios="ios-star" class="collect" (click)="Collect(i)" [style.color]="collectflag[i]?'yellow':'gray'"></ion-icon> 
+                    <span>{{item.collection}}</span>
+                </span>
+                <span class="span">
+                    <ion-icon ios="ios-text" md="md-text" class="comment" (click)="Comment(i)"></ion-icon>
+                    <span>{{item.assess_num}}</span>
+                </span>
+            </div>
+        </li>
+      </ul>
+    </div>
+    
+  
+  </ion-content>
+  

@@ -8,12 +8,11 @@
 <ion-content>
 <div class="content">       
     <div id="people">
-        <img src="../../assets/icon/15.jpg" alt=""  (click)="setMyself()">
+        <img src="../../assets/{{data?.avatar}}" alt=""  (click)="setMyself()">
         <ul (click)="setMyself()">
-          <li>花开岁月</li>
-          <li>8979749273</li>
+          <li>{{data?.nickname}}</li>
+          <li>{{data?.signature}}</li>
         </ul>
-        <span (click)="myself()">主页 ></span>
     </div>
   
     <div id="content1">
