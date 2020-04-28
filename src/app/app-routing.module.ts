@@ -38,18 +38,14 @@ const routes: Routes = [
   //   path: 'searchdetail',
   //   loadChildren: () => import('./searchdetail/searchdetail.module').then( m => m.SearchdetailPageModule)
   // },
+  // {
+  //   path: 'comment',
+  //   loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
+  // },
   {
-    path: 'comment',
-    loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
+    path: 'set',
+    loadChildren: () => import('./set/set.module').then( m => m.SetPageModule)
   },
-  // {
-  //   path: 'poemgameone',
-  //   loadChildren: () => import('./poemgameone/poemgameone.module').then( m => m.PoemgameonePageModule)
-  // },
-  // {
-  //   path: 'set',
-  //   loadChildren: () => import('./set/set.module').then( m => m.SetPageModule)
-  // },
   {
     path: 'myself',
     loadChildren: () => import('./myself/myself.module').then( m => m.MyselfPageModule)
@@ -58,18 +54,18 @@ const routes: Routes = [
     path: 'setmyself',
     loadChildren: () => import('./setmyself/setmyself.module').then( m => m.SetmyselfPageModule)
   },
-  {
-    path: 'mylike',
-    loadChildren: () => import('./mylike/mylike.module').then( m => m.MylikePageModule)
-  },
-  {
-    path: 'mycollect',
-    loadChildren: () => import('./mycollect/mycollect.module').then( m => m.MycollectPageModule)
-  },
-  {
-    path: 'myfollow',
-    loadChildren: () => import('./myfollow/myfollow.module').then( m => m.MyfollowPageModule)
-  },
+  // {
+  //   path: 'mylike',
+  //   loadChildren: () => import('./mylike/mylike.module').then( m => m.MylikePageModule)
+  // },
+  // {
+  //   path: 'mycollect',
+  //   loadChildren: () => import('./mycollect/mycollect.module').then( m => m.MycollectPageModule)
+  // },
+  // {
+  //   path: 'myfollow',
+  //   loadChildren: () => import('./myfollow/myfollow.module').then( m => m.MyfollowPageModule)
+  // },
   // {
   //   path: 'mycreate',
   //   loadChildren: () => import('./mycreate/mycreate.module').then( m => m.MycreatePageModule)
@@ -78,10 +74,10 @@ const routes: Routes = [
   //   path: 'aboutus',
   //   loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
   // },
-  {
-    path: 'recommentpoem',
-    loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
-  },
+  // {
+  //   path: 'recommentpoem',
+  //   loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
+  // },
   // {
   //   path: 'poemlist',
   //   loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
@@ -90,38 +86,42 @@ const routes: Routes = [
   //   path: 'createpoem',
   //   loadChildren: () => import('./createpoem/createpoem.module').then( m => m.CreatepoemPageModule)
   // },
-  // {
-  //   path: 'poemgame',
-  //   loadChildren: () => import('./poemgame/poemgame.module').then( m => m.PoemgamePageModule)
-  // },
-  // {
-  //   path: 'poemgametwo',
-  //   loadChildren: () => import('./poemgametwo/poemgametwo.module').then( m => m.PoemgametwoPageModule)
-  // },
-  // {
-  //   path: 'login',
-  //   loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  // },
-  // {
-  //   path: 'register',
-  //   loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  // },
-  // {
-  //   path: 'regist-success',
-  //   loadChildren: () => import('./regist-success/regist-success.module').then( m => m.RegistSuccessPageModule)
-  // },
-  // {
-  //   path: 'forgetpwd-one',
-  //   loadChildren: () => import('./forgetpwd-one/forgetpwd-one.module').then( m => m.ForgetpwdOnePageModule)
-  // },
-  // {
-  //   path: 'forgetpwd-two',
-  //   loadChildren: () => import('./forgetpwd-two/forgetpwd-two.module').then( m => m.ForgetpwdTwoPageModule)
-  // },
-  // {
-  //   path: 'poemgamethree',
-  //   loadChildren: () => import('./poemgamethree/poemgamethree.module').then( m => m.PoemgamethreePageModule)
-  // },
+  {
+    path: 'poemgame',
+    loadChildren: () => import('./poemgame/poemgame.module').then( m => m.PoemgamePageModule)
+  },
+  {
+    path: 'poemgametwo',
+    loadChildren: () => import('./poemgametwo/poemgametwo.module').then( m => m.PoemgametwoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'regist-success',
+    loadChildren: () => import('./regist-success/regist-success.module').then( m => m.RegistSuccessPageModule)
+  },
+  {
+    path: 'poemgamethree',
+    loadChildren: () => import('./poemgamethree/poemgamethree.module').then( m => m.PoemgamethreePageModule)
+  },
+  {
+    path: 'outcome',
+    loadChildren: () => import('./outcome/outcome.module').then( m => m.OutcomePageModule)
+  },
+  {
+    path: 'poemdetail',
+    loadChildren: () => import('./poemdetail/poemdetail.module').then( m => m.PoemdetailPageModule)
+  },
+  {
+    path: 'setpwd',
+    loadChildren: () => import('./setpwd/setpwd.module').then( m => m.SetpwdPageModule)
+  },
 
 ];
 @NgModule({

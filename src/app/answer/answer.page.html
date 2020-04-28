@@ -25,14 +25,21 @@
             <button type="button" (click)="showall()">展开</button>
         </div>
 
+        <div class="play" (click)="play()">
+                开始答题
+        </div>
+
         <div id="gradeMe">
             <ul class="bigul">
                 <li class="bigli">
-                    <span id="num">3838</span>
-                    <img src="../../assets/icon/33.jpg" alt="" (click)="presentActionSheet()">
+                    <span id="num">{{data?.index+1}}</span>
+                    <img src="../../assets/{{myAvatar}}" alt="" (click)="presentDetail()">
                     <ul>
-                        <li>花开岁月</li>
-                        <li style="font-size:12px;color:grey">答对15道 &nbsp; 用时3分51秒</li>
+                        <li>{{nickname}}</li>
+                        <li style="font-size:12px;color:grey">
+                            答对{{myRight_num}}道 &nbsp; 
+                            用时{{minute}}分{{second}}秒
+                        </li>
                     </ul>
                     <span id="identify">考生</span>
                 </li>
@@ -41,41 +48,41 @@
 
         <div id="gradeOther">
             <ul class="bigul">
-                <li class="bigli" (click)="goFans()" >
+                <li class="bigli">
                     <span id="num">1</span>
-                    <img src="../../assets/icon/34.jpg" alt="" (click)="presentActionSheet()">
+                    <img src="../../assets/{{result1[0]?.avatar}}" alt="">
                     <ul>
-                        <li>唯花爱之杨鲁班了</li>
-                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                        <li>{{result1[0]?.nickname}}</li>
+                        <li style="font-size:12px;color:grey">答对{{result1[0]?.right_num}}道 &nbsp;用时{{result1[0]?.time.split(" ")[0]}}分{{result1[0]?.time.split(" ")[1]}}秒</li>
                     </ul>
-                    <span>状元</span>
+                    <span class="identify">状元</span>
                 </li>
-                <li class="bigli" (click)="goCollection()">
-                    <span id="num">20</span>
-                    <img src="../../assets/icon/16.jpg" alt="" (click)="presentActionSheet()">
+                <li class="bigli">
+                    <span id="num">2</span>
+                    <img src="../../assets/{{result1[1]?.avatar}}" alt="">
                     <ul>
-                        <li>小天才</li>
-                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                        <li>{{result1[1]?.nickname}}</li>
+                        <li style="font-size:12px;color:grey">答对{{result1[1]?.right_num}}道 &nbsp;用时{{result1[1]?.time.split(" ")[0]}}分{{result1[1]?.time.split(" ")[1]}}秒</li>
                     </ul>
-                    <span>榜眼</span>
+                    <span class="identify">榜眼</span>
                 </li>
-                <li class="bigli" (click)="goFans()" >
-                    <span id="num">1</span>
-                    <img src="../../assets/icon/34.jpg" alt="" (click)="presentActionSheet()">
+                <li class="bigli">
+                    <span id="num">3</span>
+                    <img src="../../assets/{{result1[2]?.avatar}}" alt="">
                     <ul>
-                        <li>唯花爱之杨鲁班了</li>
-                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                        <li>{{result1[2]?.nickname}}</li>
+                        <li style="font-size:12px;color:grey">答对{{result1[2]?.right_num}}道 &nbsp;用时{{result1[2]?.time.split(" ")[0]}}分{{result1[2]?.time.split(" ")[1]}}秒</li>
                     </ul>
-                    <span>状元</span>
+                    <span class="identify">探花</span>
                 </li>
-                <li class="bigli" (click)="goCollection()">
-                    <span id="num">20</span>
-                    <img src="../../assets/icon/16.jpg" alt="" (click)="presentActionSheet()">
+                <li class="bigli" *ngFor="let item of result2,let i = index">
+                    <span id="num">{{i+4}}</span>
+                    <img src="../../assets/{{item?.avatar}}" alt="">
                     <ul>
-                        <li>小天才</li>
-                        <li style="font-size:12px;color:grey">答对15道 &nbsp;用时3分51秒</li>
+                        <li>{{item.nickname}}</li>
+                        <li style="font-size:12px;color:grey">答对{{item?.right_num}}道 &nbsp;用时{{item?.time.split(" ")[0]}}分{{item?.time.split(" ")[1]}}秒</li>
                     </ul>
-                    <span>榜眼</span>
+                    <span class="identify">考生</span>
                 </li>
                
             </ul>
@@ -84,8 +91,3 @@
     
 </ion-content>
 
-<ion-footer (click)="play()">
-    
-        开始答题
-    
-</ion-footer>

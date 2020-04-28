@@ -65,6 +65,14 @@ ion-content{
                 -webkit-box-orient: vertical;
             }
         }
+        .play{
+            height: 40px;
+            background-color:rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+        }
 
         #gradeMe,#gradeOther{
             // border: 1px solid blue;
@@ -83,6 +91,11 @@ ion-content{
                     border-width: 0 0 1px 0;
                     border-style: solid;
                     border-color: gainsboro;
+                    position: relative;
+                    .identify{
+                        position: absolute;
+                        right: 30px;
+                    }
                     img{
                         width:60px;
                         height:60px;
@@ -121,10 +134,5 @@ ion-content{
 }
 
 ion-footer{
-    height: 40px;
-    background-color:rgba(0, 0, 0, 0.7);
-    border-radius: 20px;
-    text-align: center;
-    line-height: 40px;
-    color: white;
+    
 }

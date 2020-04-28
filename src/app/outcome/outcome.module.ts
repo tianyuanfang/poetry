@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-
-import { PoemgameonePage } from './poemgameone.page';
 import { RouterModule } from '@angular/router';
+
+import { OutcomePage } from './outcome.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: PoemgameonePage }])
+    RouterModule.forChild([{ path: '', component: OutcomePage }])
   ],
-  declarations: [PoemgameonePage]
+  declarations: [OutcomePage]
 })
-export class PoemgameonePageModule {}
+export class OutcomePageModule {}

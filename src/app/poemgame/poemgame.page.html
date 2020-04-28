@@ -1,28 +1,20 @@
 <ion-header>
   <ion-toolbar>
-      <ion-buttons slot="start">
-          <ion-button (click)="back()">
-              <ion-icon style="float:left;width:50px;height:30px;color:blue" slot="icon-only" name="arrow-back"></ion-icon>
-          </ion-button>
-      </ion-buttons>
-    <ion-title>第1道</ion-title>
+    <ion-title>类型一</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="body">
-      <div id="time">20s</div>
+      <span id="time"></span>
     <div class="title">
-      <span>1</span>
-      、郑板桥的《竹石》是一首咏物的诗，他跟下列那首诗的表现手法是相同的？
+      {{this.question?.title}}
     </div>
-    <input id="answerA" type="text" name="answerA" value="《石灰吟》" (click)='answerA()'>
-    <input id="answerB" type="text" name="answerB" value="《静夜思》" (click)='answerA()'>
-    <input id="answerC" type="text" name="answerC" value="《将进酒》" (click)='answerA()'>
-    <input id="answerC" type="text" name="answerC" value="《茅屋为秋风所破歌》" (click)='answerA()'>
-  </div>
+    <form name="myform">
+      <input id="answerA" readonly="readonly" type="text" name="answerA" value="{{this.question?.optionA}}" (click)='ans("A")'>
+      <input id="answerB" readonly="readonly" type="text" name="answerB" value="{{this.question?.optionB}}" (click)='ans("B")'>
+      <input id="answerC" readonly="readonly" type="text" name="answerC" value="{{this.question?.optionC}}" (click)='ans("C")'>
+    </form>
+    </div>
 </ion-content>
 
-<ion-footer (click)="goPoemgameOne()">
-  下一个游戏
-</ion-footer>

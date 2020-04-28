@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>诗词大会</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="body">
+    <div class="identify">考生</div>
+    <div class="img"><img src="../../assets/{{data?.avatar}}" alt=""></div>
+    <div class="outcome">
+      <p>{{data?.nickname}}</p>
+      <p class="p2">答对{{sumQuestionNum}}道·用时{{time[0]}}分{{time[1]}}秒</p>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+    <button class="btn" (click)="goAnswer()">确定</button>
+</ion-footer>

@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { ForgetpwdTwoPage } from './forgetpwd-two.page';
+import { PoemdetailPage } from './poemdetail.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: ForgetpwdTwoPage }])
+    RouterModule.forChild([{ path: '', component: PoemdetailPage }])
   ],
-  declarations: [ForgetpwdTwoPage]
+  declarations: [PoemdetailPage]
 })
-export class ForgetpwdTwoPageModule {}
+export class PoemdetailPageModule {}

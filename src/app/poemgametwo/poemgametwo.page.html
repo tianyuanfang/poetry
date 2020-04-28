@@ -1,19 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>poemgametwo</ion-title>
+    <ion-title>类型三</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="body">
+    <div id="time"></div>
     <div class="title">
       <ul>
         <li>根据图画与提示猜想最贴切的诗句</li>
-        <li><img src="../../assets/icon/poem2.jpg"></li>
+        <li><img src="../../assets/{{this.question?.image}}"></li>
       </ul>
     </div>
-    <input id="answerA" type="text" name="answerA" value="倚树沉眠日已斜">
-    <input id="answerB" type="text" name="answerB" value="纤手轻拈红豆弄">
-    <input id="answerC" type="text" name="answerC" value="愿君多采撷">
+    <form name="myform">
+      <input id="answerA" readonly="readonly" type="text" name="answerA" value="{{this.question?.optionA}}" (click)='ans("A")'>
+      <input id="answerB" readonly="readonly" type="text" name="answerB" value="{{this.question?.optionB}}" (click)='ans("B")'>
+      <input id="answerC" readonly="readonly" type="text" name="answerC" value="{{this.question?.optionC}}" (click)='ans("C")'>
+    </form>
   </div>
 </ion-content>

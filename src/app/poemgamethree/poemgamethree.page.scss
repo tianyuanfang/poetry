@@ -16,10 +16,10 @@
     .question{
         width: 242px;
         height: 240px;
-        border: 1px solid grey;
+        // border: 1px solid grey;
         margin-top: 30px;
         margin-left: 18%;
-        div{
+        li{
             width: 80px;
             height: 80px;
             border: 1px solid grey;
@@ -37,10 +37,11 @@
         text-align: center;
     }
     button{
+        outline:none;
         width: 100px;
         height: 40px;
         border-radius: 20px;
-        background-color: black;
+        background-color: rgb(82, 63, 245);
         opacity: 0.8;
         color: white;
         font-size: 18px;

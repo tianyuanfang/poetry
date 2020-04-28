@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { ForgetpwdOnePage } from './forgetpwd-one.page';
+import { SetpwdPage } from './setpwd.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild([{ path: '', component: ForgetpwdOnePage }])
+    RouterModule.forChild([{ path: '', component: SetpwdPage }])
   ],
-  declarations: [ForgetpwdOnePage]
+  declarations: [SetpwdPage]
 })
-export class ForgetpwdOnePageModule {}
+export class SetpwdPageModule {}
