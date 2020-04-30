@@ -58,11 +58,10 @@
                   <div id="header">
                       <div class="div1"><img src="../../assets/{{data?.info?.avatar}}" alt=""></div>
                       <div class="div2"><span>{{data?.info?.nickname}}</span><span>{{item?.time}}</span></div>
-                      <div class="div3">
-                          <ion-icon name="ios-arrow-down" (click)="showList()"></ion-icon>
+                      <div class="div3" [style.display]="userId==uid?'block':'none'">
+                          <ion-icon name="ios-arrow-down" (click)="showList(i)"></ion-icon>
                           <ul class="hideList">
-                            <li (click)="edit(item.pID,i)"><i class="iconfont icon-bianji"></i>编辑</li>
-                            <li (click)="del(item.pID,i)"><i class="iconfont icon-picture-delet"></i>删除</li>
+                            <li (click)="del(item.cid,i)"><i class="iconfont icon-picture-delet"></i>删除</li>
                           </ul>
                       </div>
                   </div>
@@ -70,7 +69,7 @@
                     <p>
                      {{item.content}}
                     </p>
-                    <img src="../../assets/icon/26.jpg" alt="">
+                    <!-- <img src="../../assets/icon/26.jpg" alt=""> -->
                   </div>
                   <div id="footer">
                       <span class="span">

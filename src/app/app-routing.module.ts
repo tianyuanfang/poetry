@@ -22,22 +22,22 @@ const routes: Routes = [
     path: 'poem',
     loadChildren: () => import('./poem/poem.module').then( m => m.PoemPageModule)
   },
-  // {
-  //   path: 'hometail',
-  //   loadChildren: () => import('./hometail/hometail.module').then( m => m.HometailPageModule)
-  // },
-  // {
-  //   path: 'hometotal',
-  //   loadChildren: () => import('./hometotal/hometotal.module').then( m => m.HometotalPageModule)
-  // },
-  // {
-  //   path: 'search',
-  //   loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  // },
-  // {
-  //   path: 'searchdetail',
-  //   loadChildren: () => import('./searchdetail/searchdetail.module').then( m => m.SearchdetailPageModule)
-  // },
+  {
+    path: 'hometail',
+    loadChildren: () => import('./hometail/hometail.module').then( m => m.HometailPageModule)
+  },
+  {
+    path: 'hometotal',
+    loadChildren: () => import('./hometotal/hometotal.module').then( m => m.HometotalPageModule)
+  },
+  {
+    path: 'search',
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'searchdetail',
+    loadChildren: () => import('./searchdetail/searchdetail.module').then( m => m.SearchdetailPageModule)
+  },
   // {
   //   path: 'comment',
   //   loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
@@ -82,10 +82,10 @@ const routes: Routes = [
   //   path: 'poemlist',
   //   loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
   // },
-  // {
-  //   path: 'createpoem',
-  //   loadChildren: () => import('./createpoem/createpoem.module').then( m => m.CreatepoemPageModule)
-  // },
+  {
+    path: 'createpoem',
+    loadChildren: () => import('./createpoem/createpoem.module').then( m => m.CreatepoemPageModule)
+  },
   {
     path: 'poemgame',
     loadChildren: () => import('./poemgame/poemgame.module').then( m => m.PoemgamePageModule)

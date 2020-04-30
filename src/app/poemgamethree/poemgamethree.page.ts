@@ -78,7 +78,7 @@ export class PoemgamethreePage implements OnInit {
         }
 
         this.time--;
-        document.getElementById('time').innerHTML = this.time + 's'; 
+        document.getElementById('time').innerHTML = this.time + 's';
 
         if(this.time==0||this.flag){
           this.time=21;

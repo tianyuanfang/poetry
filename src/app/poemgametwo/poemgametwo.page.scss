@@ -1,3 +1,11 @@
+ion-header{
+    ion-toolbar{
+        ion-title{
+            text-align: center;
+        }
+    }
+}
+
 ion-content{
     .body{
         width: 100%;
@@ -38,6 +46,7 @@ ion-content{
             padding-left: 10px;
             -moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;
         }
+        
     }
    
 }

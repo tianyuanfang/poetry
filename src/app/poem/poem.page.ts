@@ -29,37 +29,41 @@ export class PoemPage  {
   Flag1;//盛放该用户收藏的作品id
   flag0=[];//标记该作品本用户是否点赞
   flag1=[];//标记该作品本用户是否收藏
-  
+
+  ngOnInit() {
+//回应广播事件
+// this.eventService.eventEmitter.on('useraction', () => {
+//   console.log("接收成功");
+//   //更新数据 方法 内容
+//   this.http.post("/api/tabs/poem/love",{"uid":this.userId}).subscribe(res=>{
+//     this.Flag0=res;
+//     //判断喜欢的
+//     for(var i=0;i<this.Flag0.length;i++){
+//       for(var j=0;j<this.data.length;j++){
+//         if(this.Flag0[i].cid==this.data[j].cid){
+//           this.flag0[j]=true;
+//         }
+//       }
+//     }
+//     this.http.post("/api/tabs/poem/collection",{"uid":this.userId}).subscribe(res=>{
+//       console.log('1',res);
+//       this.Flag1=res;
+      
+//       //判断收藏的
+//       for(var i=0;i<this.Flag1.length;i++){
+//         for(var j=0;j<this.data.length;j++){
+//           if(this.Flag1[i].cid==this.data[j].cid){
+//             this.flag1[j]=true;
+//           }
+//         }
+//       }
+//     })
+//   })
+// });
+  }
   ionViewWillEnter(){
     this.userId=localStorage.getItem("userId");
-    //回应广播事件
-    // this.eventService.eventEmitter.on('useraction', () => {
-    //   //更新数据 方法 内容
-    //   this.http.post("/api/tabs/poem/love",{"uid":this.userId}).subscribe(res=>{
-    //     this.Flag0=res;
-    //     //判断喜欢的
-    //     for(var i=0;i<this.Flag0.length;i++){
-    //       for(var j=0;j<this.data.length;j++){
-    //         if(this.Flag0[i].cid==this.data[j].cid){
-    //           this.flag0[j]=true;
-    //         }
-    //       }
-    //     }
-    //     this.http.post("/api/tabs/poem/collection",{"uid":this.userId}).subscribe(res=>{
-    //       console.log('1',res);
-    //       this.Flag1=res;
-          
-    //       //判断收藏的
-    //       for(var i=0;i<this.Flag1.length;i++){
-    //         for(var j=0;j<this.data.length;j++){
-    //           if(this.Flag1[i].cid==this.data[j].cid){
-    //             this.flag1[j]=true;
-    //           }
-    //         }
-    //       }
-    //     })
-    //   })
-    // });
+    
 
 
     //用户本人发布作品数量

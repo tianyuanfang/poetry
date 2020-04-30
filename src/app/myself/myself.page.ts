@@ -15,6 +15,11 @@ export class MyselfPage implements OnInit {
 
   ngOnInit() {
   }
+  back() {
+    // this.eventService.eventEmitter.emit('useraction');
+    // this.nav.back();
+    this.nav.navigateForward("/poem");
+  }
 
   uid;//进入主页的用户id
   userId;//登录用户id
@@ -28,9 +33,11 @@ export class MyselfPage implements OnInit {
   flag1=[];//标记该作品本用户是否收藏
   flagAttention=false;//标记该用户是否关注
   attention;//盛放关注的人
+  ele;//标记元素
   ionViewWillEnter(){
     this.userId=localStorage.getItem('userId');
     this.uid=localStorage.getItem('uid');
+    
     //判断是否关注
     this.http.post('/api/tabs/my/attention',{'uid':this.userId}).subscribe(res=>{
       console.log('attention',res);
@@ -102,10 +109,16 @@ export class MyselfPage implements OnInit {
     this.flagAttention=!this.flagAttention;
   }
 
-  back() {
-    // this.eventService.eventEmitter.emit('useraction');
-    this.nav.back();
-    // this.nav.navigateForward("/poem");
+  
+  //删除作品
+  del(cid,i){
+    var ul=document.getElementById("ul");
+    var li=ul.childNodes;
+    console.log(li);
+    ul.removeChild(li[i+1]);
+    this.http.post('/api/tabs/delpoem',{"uid":this.userId,"cid":cid}).subscribe(res=>{
+      // console.log(res)
+    })
   }
 
   //点赞和取消赞
@@ -162,12 +175,12 @@ export class MyselfPage implements OnInit {
 
   flag=false;
   hideList;
-  showList(){ //控制下拉列表的显示与隐藏
+  showList(i){ //控制下拉列表的显示与隐藏
     this.hideList=document.getElementsByClassName('hideList');
     if(this.flag==false){
-      this.hideList[0].style.display='block';
+      this.hideList[i].style.display='block';
     }else{
-      this.hideList[0].style.display='none';
+      this.hideList[i].style.display='none';
     }
     this.flag=!this.flag;
   }

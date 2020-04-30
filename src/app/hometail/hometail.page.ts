@@ -35,38 +35,6 @@ export class HometailPage{
     this.nav.back();
   }
 
-  //点赞或取消赞
-  // clickZan(){
-  //   if(this.Flag0==false){
-  //     //传给服务端那个用户收藏了哪个作品，服务端在数据库记录
-  //     this.http.post('/api/homedetail/love',{userID:2,pid:this.poemPid}).subscribe(data=>{
-  //       console.log(data);
-  //     });
-  //     this.Flag0=true;
-  //   }else{
-  //     this.http.post('/api/homedetail/dellove',{userID:2,projectID:this.poemPid}).subscribe(data=>{
-  //       console.log(data);
-  //     });
-  //     this.Flag0=false;
-  //   }      
-  // }
-
-  //  //收藏此作品
-  // clickCollect(){
-  //   if(this.Flag1==false){
-  //     //传给服务端那个用户收藏了哪个作品，服务端在数据库记录
-  //     this.http.post('/api/homedetail/collect',{userID:2,pid:this.poemPid}).subscribe(data=>{
-  //       console.log(data);
-  //     });
-  //     this.Flag1=true;
-  //   }else{
-  //     this.http.post('/api/homedetail/delcollect',{userID:2,projectID:this.poemPid}).subscribe(data=>{
-  //       console.log(data);
-  //     });
-  //     this.Flag1=false;
-  //   }      
-  // }
-
 
   showall() {
     var button = document.getElementsByTagName("button")[0];

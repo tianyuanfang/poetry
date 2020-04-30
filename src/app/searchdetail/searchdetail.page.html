@@ -5,33 +5,38 @@
         <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
     </ion-button>
   </ion-buttons>
+  <ion-title>{{searchText}}</ion-title>
   
 </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <div id="red"></div>
+    <span style='color: red;'></span>
   <ul class="ul" >
     <li class="li" [style.display]="result1?'block':'none'">诗人</li>
-    <li *ngFor="let item of result1,let i = index" (click)="goPoemdetail()">
+    <li *ngFor="let item of result1,let i = index" (click)="goPoemdetail1(i)">
         <div>
-            {{item.author}}
-        </div><span style='color: red;'></span>
-        <p>出师未捷身先死，长使英雄泪满襟。</p>
+            <span style="background-color:rgb(250, 250, 94)">{{item.author}}</span>
+        </div>
+        <p>{{item.extract}}</p>
         
     </li>
     <li class="li" [style.display]="result2?'block':'none'">作品</li>
-    <li *ngFor="let item of result2,let i = index" (click)="goPoemdetail()">
+    <li *ngFor="let item of result2,let i = index" (click)="goPoemdetail2(i)">
         <div>
-            {{item.title}}<span>[{{item.dynasty}}]{{item.author}}</span>
+            {{item.title}}<span id="little">[{{item.dynasty}}]{{item.author}}</span>
         </div>
-        <p>{{item.poem}}</p>
+        <p>
+            <span style="background-color:rgb(250, 250, 94)">{{sentence[i]}}</span>
+        </p>
     </li>
     <li class="li" [style.display]="result3?'block':'none'">{{searchText}}</li>
-    <li *ngFor="let item of result3,let i = index" (click)="goPoemdetail()">
+    <li *ngFor="let item of result3,let i = index" (click)="goPoemdetail3(i)">
         <div>
-            {{item.title}}<span>[{{item.dynasty}}]{{item.author}}</span>
+            {{item.title}}<span id="little">[{{item.dynasty}}]{{item.author}}</span>
         </div>
-        <p>{{item.poem}}</p>
+        <p>{{item.extract}}</p>
     </li>
   </ul>
 

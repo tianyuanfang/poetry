@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
+// import { Camera } from '@ionic-native/camera/ngx';//在app.module.ts中引入Camera
+// import { ImagePicker } from '@ionic-native/image-picker/ngx';//在app.module.ts中引入ImagePicker
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    // Camera,//
+    // ImagePicker,//
   ],
   bootstrap: [AppComponent]
 })
