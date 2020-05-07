@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
+import { EventService } from'../services/event.service';//此页面消失的时候发送广播：引入
 
 @Component({
   selector: 'app-hometail',
@@ -8,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./hometail.page.scss'],
 })
 export class HometailPage{
-  constructor(public nav:NavController,public http:HttpClient) { }
+  constructor(public nav:NavController,public http:HttpClient,public eventService: EventService) { }
 
   poemPid;//记录本地存储的诗词id
   data;//承载后端传回的信息
@@ -32,6 +33,7 @@ export class HometailPage{
 
   //返回上一页
   back() {
+    this.eventService.eventEmitter.emit('action');
     this.nav.back();
   }
 

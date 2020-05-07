@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NavController ,NavParams} from '@ionic/angular';
+import { EventService } from'../services/event.service';//此页面消失的时候发送广播：引入
 
 @Component({
   selector: 'app-hometotal',
@@ -9,7 +10,7 @@ import { NavController ,NavParams} from '@ionic/angular';
 export class HometotalPage implements OnInit {
 
   selectedTheme=["全部","苏轼","李白","杜甫","辛弃疾","王维","白居易","李商隐","纳兰性德","爱情","禅","战争","离别","孤独","壮志","思乡","田园","写景","唐诗三百首","宋词三百首","道德经"];  Author=[]
-  constructor(public nav: NavController,) {
+  constructor(public nav: NavController,public eventService: EventService) {
      
    }
 
@@ -23,7 +24,8 @@ export class HometotalPage implements OnInit {
   poem(i){
     this.poemtype=this.selectedTheme[i];
     localStorage.setItem('poemtype',this.poemtype);
-    this.nav.navigateForward("/home");
+    this.eventService.eventEmitter.emit('action');
+    this.nav.navigateBack("/tabs/home");
   }
  
 }

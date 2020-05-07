@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
-import{ EventService }from'../services/event.service';//此页面消失的时候发送广播：引入
+import { EventService } from'../services/event.service';//此页面消失的时候发送广播：引入
 
 @Component({
   selector: 'app-myself',
@@ -10,15 +10,17 @@ import{ EventService }from'../services/event.service';//此页面消失的时候
 })
 export class MyselfPage implements OnInit {
 
-  public eventService: EventService;//声明
-  constructor(public nav: NavController,public http:HttpClient) { }
+  // public eventService: EventService;//声明
+  constructor(public nav: NavController,public http:HttpClient,public eventService: EventService) { }
 
   ngOnInit() {
   }
   back() {
-    // this.eventService.eventEmitter.emit('useraction');
-    // this.nav.back();
-    this.nav.navigateForward("/poem");
+    this.eventService.eventEmitter.emit('useraction');
+    this.nav.back();
+    // this.nav.navigateForward("/poem");
+    // this.nav.navigateBack("/poem?reload=T");//返回上个页面，路由添加刷新参数
+
   }
 
   uid;//进入主页的用户id
@@ -116,7 +118,7 @@ export class MyselfPage implements OnInit {
     var li=ul.childNodes;
     console.log(li);
     ul.removeChild(li[i+1]);
-    this.http.post('/api/tabs/delpoem',{"uid":this.userId,"cid":cid}).subscribe(res=>{
+    this.http.post('/api/tabs/poem/delCreate',{"cid":cid}).subscribe(res=>{
       // console.log(res)
     })
   }

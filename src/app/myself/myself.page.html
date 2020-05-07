@@ -18,32 +18,32 @@
       <div id="head" >
         <img src="../../assets/{{user?.avatar}}">
       </div>
-      <div id="signature">{{user?.sex}}&nbsp;·&nbsp;{{user?.signature}}</div>
+      <div id="signature">{{user?.sex?user?.sex:"未设置性别"}}&nbsp;·&nbsp;{{user?.signature?user?.signature:"未设置签名"}}</div>
       <ul>
         <li id="like">
           <div id="div" (click)="goLove()">
-            <span>{{data?.love}}</span>
+            <span>{{data?.love?data?.love:0}}</span>
             <span id="text">获赞</span>
           </div>
           <div id="line"></div>
         </li>
         <li id="follow">
           <div id="div" (click)="goAttention()">
-            <span>{{data?.attention}}</span>
+            <span>{{data?.attention?data?.attention:0}}</span>
             <span id="text">关注</span>
           </div>
           <div id="line"></div>
         </li>
         <li id="colloct">
           <div id="div" (click)="goCollection()">
-              <span>{{data?.collection}}</span>
+              <span>{{data?.collection?data?.collection:0}}</span>
               <span id="text">收藏</span>
           </div>
             <div id="line"></div>
         </li>
         <li id="fans">
           <div id="div" (click)="goAttention()">
-            <span>{{data?.fan}}</span>
+            <span>{{data?.fan?data?.fan:0}}</span>
             <span id="text">粉丝</span>
           </div>
         </li>
@@ -51,7 +51,7 @@
     </div>
 
     <div class="create">
-      <div id="title">创作({{article?.length}})</div>
+      <div id="title">创作({{article?.length?article?.length:0}})</div>
       <div id="content">
           <ul id="ul">
               <li class="li" *ngFor="let item of article,let i = index">

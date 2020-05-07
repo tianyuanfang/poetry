@@ -38,10 +38,10 @@ const routes: Routes = [
     path: 'searchdetail',
     loadChildren: () => import('./searchdetail/searchdetail.module').then( m => m.SearchdetailPageModule)
   },
-  // {
-  //   path: 'comment',
-  //   loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
-  // },
+  {
+    path: 'comment',
+    loadChildren: () => import('./comment/comment.module').then( m => m.CommentPageModule)
+  },
   {
     path: 'set',
     loadChildren: () => import('./set/set.module').then( m => m.SetPageModule)
@@ -54,34 +54,30 @@ const routes: Routes = [
     path: 'setmyself',
     loadChildren: () => import('./setmyself/setmyself.module').then( m => m.SetmyselfPageModule)
   },
-  // {
-  //   path: 'mylike',
-  //   loadChildren: () => import('./mylike/mylike.module').then( m => m.MylikePageModule)
-  // },
-  // {
-  //   path: 'mycollect',
-  //   loadChildren: () => import('./mycollect/mycollect.module').then( m => m.MycollectPageModule)
-  // },
-  // {
-  //   path: 'myfollow',
-  //   loadChildren: () => import('./myfollow/myfollow.module').then( m => m.MyfollowPageModule)
-  // },
-  // {
-  //   path: 'mycreate',
-  //   loadChildren: () => import('./mycreate/mycreate.module').then( m => m.MycreatePageModule)
-  // },
-  // {
-  //   path: 'aboutus',
-  //   loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
-  // },
-  // {
-  //   path: 'recommentpoem',
-  //   loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
-  // },
-  // {
-  //   path: 'poemlist',
-  //   loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
-  // },
+  {
+    path: 'mylike',
+    loadChildren: () => import('./mylike/mylike.module').then( m => m.MylikePageModule)
+  },
+  {
+    path: 'mycollect',
+    loadChildren: () => import('./mycollect/mycollect.module').then( m => m.MycollectPageModule)
+  },
+  {
+    path: 'myfollow',
+    loadChildren: () => import('./myfollow/myfollow.module').then( m => m.MyfollowPageModule)
+  },
+  {
+    path: 'aboutus',
+    loadChildren: () => import('./aboutus/aboutus.module').then( m => m.AboutusPageModule)
+  },
+  {
+    path: 'recommentpoem',
+    loadChildren: () => import('./recommentpoem/recommentpoem.module').then( m => m.RecommentpoemPageModule)
+  },
+  {
+    path: 'poemlist',
+    loadChildren: () => import('./poemlist/poemlist.module').then( m => m.PoemlistPageModule)
+  },
   {
     path: 'createpoem',
     loadChildren: () => import('./createpoem/createpoem.module').then( m => m.CreatepoemPageModule)

@@ -33,6 +33,9 @@ export class LoginPage implements OnInit {
     this.http.post('/api/tabs/login',{"user":this.phone,"password":this.pwd}).subscribe(res=>{
       console.log(res);
       this.data=res;
+      if(this.phone=""){
+        document.getElementById("info").innerHTML="账号为空";
+      }
       if(this.data.status==0){
         document.getElementById("info").innerHTML=this.data.info;
       }

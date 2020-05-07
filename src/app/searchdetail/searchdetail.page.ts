@@ -23,12 +23,12 @@ export class SearchdetailPage implements OnInit {
     this.searchText=localStorage.getItem("searchText");
     this.http.post('/api/home/search',{"searchText":this.searchText}).subscribe(res=>{
       console.log(res)
-      if(res.result1) {
-        this.result1=res.result1;
+      if(res['result1']) {
+        this.result1=res['result1'];
       }
-      if(res.result3) this.result3=res.result3;
-      if(res.result2){
-        this.result2=res.result2;
+      if(res['result3']) this.result3=res['result3'];
+      if(res['result2']){
+        this.result2=res['result2'];
         for(var i=0;i<this.result2.length;i++){
           var arr=this.result2[i].poem.split("\n");
           for(var j=0;j<arr.length;j++){

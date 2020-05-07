@@ -34,25 +34,25 @@ export class PoemgamethreePage implements OnInit {
       this.http.get('/api/tabs/answer/question').subscribe(res=>{
         console.log("question",res);
         this.allquestion=res['two'];
-        this.time=21;
+        this.time=20;
         resolved("ok");
       })
   }).then((r1)=>{
       console.log(r1);
       //类型二总的题目时间计时
       localStorage.setItem('sumTime2','0:00');
-      // this.tt = setInterval(()=>{
-      //   this.questionTime++;
-      //   localStorage.setItem("sumTime2",this.calculateTime(this.questionTime)) ; //倒计时
-      // },1000);
+      this.tt = setInterval(()=>{
+        this.questionTime++;
+        localStorage.setItem("sumTime2",this.calculateTime(this.questionTime)) ; //倒计时
+      },1000);
 
       //每道题的时间倒计时
       this.timeHandle=setInterval(()=>{
 
-        if(this.time==21||this.flag){
+        if(this.time==20||this.flag){
             if(this.num!=0){
               if(! (this.num==5&&this.flag)){
-                this.time=21;
+                this.time=20;
               }
               if(this.num==5&&this.flag){
                 clearInterval(this.timeHandle);
@@ -78,13 +78,13 @@ export class PoemgamethreePage implements OnInit {
         }
 
         this.time--;
-        document.getElementById('time').innerHTML = this.time + 's';
+        // document.getElementById('time').innerHTML = this.time + 's';
 
         if(this.time==0||this.flag){
-          this.time=21;
+          this.time=20;
         }
 
-        if(this.time==21&&this.num==5||(this.num==5&&this.flag)){
+        if(this.time==20&&this.num==5||(this.num==5&&this.flag)){
           clearInterval(this.timeHandle);
           clearInterval(this.tt);
           this.MyA=this.MyA+','+" ";
@@ -103,27 +103,27 @@ export class PoemgamethreePage implements OnInit {
   
 
   //计算答题总时间
-  // calculateTime(time) {
-  //   var spit = ":";
-  //   var second = "00";
-  //   var min = "0";
-  //   var result = "";
+  calculateTime(time) {
+    var spit = ":";
+    var second = "00";
+    var min = "0";
+    var result = "";
     
-  //   if(time % 60 != 0) { //秒
-  //     if(time % 60 >= 10) {
-  //         second = (time % 60);
-  //     } else {
-  //         second = "0" + time % 60;
-  //     }
-  //   }
+    if(time % 60 != 0) { //秒
+      if(time % 60 >= 10) {
+          second = (time % 60);
+      } else {
+          second = "0" + time % 60;
+      }
+    }
     
-  //   if(parseInt(time / 60) != 0) { //分
-  //     min = parseInt(time / 60);
+    if(parseInt(time / 60) != 0) { //分
+      min = parseInt(time / 60);
   
-  //   }
-  //   result = min + spit + second;
-  //   return result;
-  // }
+    }
+    result = min + spit + second;
+    return result;
+  }
  //将选中的字呈现在下方div中
   text="";//标记选中的字
   ans(i){

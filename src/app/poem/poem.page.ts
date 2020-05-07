@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { HttpClient } from "@angular/common/http";
-import{EventService}from'../services/event.service';//监听事件广播：引入
+import {EventService} from'../services/event.service';//监听事件广播：引入
 
 @Component({
   selector: 'app-poem',
@@ -9,8 +9,10 @@ import{EventService}from'../services/event.service';//监听事件广播：引�
   styleUrls: ['./poem.page.scss'],
 })
 export class PoemPage  {
-  public eventService: EventService;//声明事件广播
-  constructor(public nav:NavController,public http:HttpClient){}
+  //声明事件广播
+  constructor(public nav:NavController,public http:HttpClient,public eventService: EventService){
+    
+  }
   
   selections=[{imgsrc:"../../assets/icon/01.jpg",imgname:"诗经全集"},{imgsrc:"../../assets/icon/02.jpg",imgname:"楚辞全集"},{imgsrc:"../../assets/icon/03.jpg",imgname:"道德经"},{imgsrc:"../../assets/icon/04.jpg",imgname:"千家诗"},
               {imgsrc:"../../assets/icon/05.jpg",imgname:"唐诗三百首"},{imgsrc:"../../assets/icon/06.jpg",imgname:"宋词三百首"},{imgsrc:"../../assets/icon/07.jpg",imgname:"元曲三百首"},{imgsrc:"../../assets/icon/08.jpg",imgname:"给孩子的诗"},
@@ -32,35 +34,53 @@ export class PoemPage  {
 
   ngOnInit() {
 //回应广播事件
-// this.eventService.eventEmitter.on('useraction', () => {
-//   console.log("接收成功");
-//   //更新数据 方法 内容
-//   this.http.post("/api/tabs/poem/love",{"uid":this.userId}).subscribe(res=>{
-//     this.Flag0=res;
-//     //判断喜欢的
-//     for(var i=0;i<this.Flag0.length;i++){
-//       for(var j=0;j<this.data.length;j++){
-//         if(this.Flag0[i].cid==this.data[j].cid){
-//           this.flag0[j]=true;
-//         }
-//       }
-//     }
-//     this.http.post("/api/tabs/poem/collection",{"uid":this.userId}).subscribe(res=>{
-//       console.log('1',res);
-//       this.Flag1=res;
-      
-//       //判断收藏的
-//       for(var i=0;i<this.Flag1.length;i++){
-//         for(var j=0;j<this.data.length;j++){
-//           if(this.Flag1[i].cid==this.data[j].cid){
-//             this.flag1[j]=true;
-//           }
-//         }
-//       }
-//     })
-//   })
-// });
+    this.eventService.eventEmitter.on('useraction', () => {
+      console.log("接收成功");
+      //更新数据 方法 内容
+      //用户本人发布作品数量
+    this.http.post('/api/tabs/poem/num',{"uid":1}).subscribe(res=>{
+      console.log(res[0]['count(*)']);
+      this.num=res[0]['count(*)'];
+  })
+  //所有用户和系统推荐的作品信息
+  this.http.get("/api/tabs/poem/article").subscribe(res=>{
+    console.log('返回到作品首页',res);
+    this.data=res;
+    for(var k=0;k<this.data.length;k++){
+      this.flag0[k]=false;
+      this.flag1[k]=false;
+    }
+    this.http.post("/api/tabs/poem/love",{"uid":this.userId}).subscribe(res=>{
+      this.Flag0=res;
+      console.log('0',this.Flag0);
+      //判断喜欢的
+      for(var i=0;i<this.Flag0.length;i++){
+        for(var j=0;j<this.data.length;j++){
+          if(this.Flag0[i].cid==this.data[j].cid){
+            this.flag0[j]=true;
+          }
+        }
+      }
+      this.http.post("/api/tabs/poem/collection",{"uid":this.userId}).subscribe(res=>{
+        console.log('1',res);
+        this.Flag1=res;
+        
+        //判断收藏的
+        for(var i=0;i<this.Flag1.length;i++){
+          for(var j=0;j<this.data.length;j++){
+            if(this.Flag1[i].cid==this.data[j].cid){
+              this.flag1[j]=true;
+            }
+          }
+        }
+      })
+    })
+  })
+
+    });
   }
+
+
   ionViewWillEnter(){
     this.userId=localStorage.getItem("userId");
     

@@ -17,7 +17,7 @@ export class PoemgametwoPage implements OnInit {
   A='';//答案
   MyA='';//我的答案
   timeHandle;//定时器
-  private time:number;//倒数时间
+  time:number;//倒数时间
   num=0;//题数
   allquestion;//所有题目
   question;//单个问题
@@ -33,26 +33,26 @@ export class PoemgametwoPage implements OnInit {
       this.http.get('/api/tabs/answer/question').subscribe(res=>{
         console.log("question",res);
         this.allquestion=res['three'];
-        this.time=21;
+        this.time=20;
         resolved("ok");
       })
     }).then((r1)=>{
       console.log(r1);
        //总的时间计时
       localStorage.setItem('sumTime3','0:00');
-      // this.tt = setInterval(()=>{
-      //   this.questionTime++;
-      //   localStorage.setItem("sumTime3",this.calculateTime(this.questionTime)) ; //倒计时
-      // },1000);
+      this.tt = setInterval(()=>{
+        this.questionTime++;
+        localStorage.setItem("sumTime3",this.calculateTime(this.questionTime)) ; //倒计时
+      },1000);
 
        //每道题倒计时
       this.timeHandle=setInterval(()=>{
 
-        if(this.time==21||this.flag){
+        if(this.time==20||this.flag){
 
           if(this.num!=0){
             if(! (this.num==5&&this.flag)){
-              this.time=21;
+              this.time=20;
             }
             if(this.num==5&&this.flag){
               clearInterval(this.timeHandle);
@@ -77,13 +77,12 @@ export class PoemgametwoPage implements OnInit {
         }
 
         this.time--;
-        document.getElementById('time').innerHTML = this.time + 's'; 
 
         if(this.time==0||this.flag){
-          this.time=21;
+          this.time=20;
         }
 
-        if(this.time==21&&this.num==5||(this.num==5&&this.flag)){
+        if(this.time==20&&this.num==5||(this.num==5&&this.flag)){
           clearInterval(this.timeHandle);
           clearInterval(this.tt);
           this.MyA=this.MyA+','+" ";
@@ -107,26 +106,26 @@ export class PoemgametwoPage implements OnInit {
 
 
 //计算答题总时间
-// calculateTime(time) {
-//   var spit = ":";
-//   var second = "00";
-//   var min = "0";
-//   var result = "";
+calculateTime(time) {
+  var spit = ":";
+  var second = "00";
+  var min = "0";
+  var result = "";
   
-//   if(time % 60 != 0) { //秒
-//     if(time % 60 >= 10) {
-//         second = (time % 60);
-//     } else {
-//         second = "0" + time % 60;
-//     }
-//   }
-//   if(parseInt(time / 60) != 0) { //分
-//         min = parseInt(time / 60);
+  if(time % 60 != 0) { //秒
+    if(time % 60 >= 10) {
+        second = (time % 60);
+    } else {
+        second = "0" + time % 60;
+    }
+  }
+  if(parseInt(time / 60) != 0) { //分
+        min = parseInt(time / 60);
     
-//   }
-//   result = min + spit + second;
-//   return result;
-// }
+  }
+  result = min + spit + second;
+  return result;
+}
 
 //记录答对题的个数
 sumQuestionNum;

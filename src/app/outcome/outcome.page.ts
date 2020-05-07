@@ -52,7 +52,7 @@ export class OutcomePage implements OnInit {
     this.http.post('/api/tabs/answer/outcome',{"sumNum":this.sumQuestionNum,"sumTime":this.sumQuestionTime,"uid":this.userId}).subscribe(res=>{
       console.log(this.sumQuestionNum,this.sumQuestionTime,this.userId);
       
-    this.nav.navigateForward("/answer");
+    this.nav.navigateForward("/tabs/answer");
     })
   }
 
